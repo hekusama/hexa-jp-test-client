@@ -273,6 +273,7 @@ bandaimachi
 bando
 banshuako
 barakinakayama
+bashamichi
 befu
 bentembashi
 bentencho
@@ -2569,6 +2570,7 @@ minamiyorii
 minamiyoshida
 minamiyufu
 minamiyukuhashi
+minatomirai
 minawa
 mine
 minenobu
@@ -2686,6 +2688,7 @@ moseushi
 moshiri
 motohasunuma
 motomachi
+motomachichukagai
 motomiya
 motonakagoya
 mototate
@@ -2947,6 +2950,7 @@ niho
 nihombashi
 nihonhesokoen
 nihonmatsu
+nihonodori
 nihozu
 nii
 niida
@@ -3918,6 +3922,7 @@ shinshiro
 shinsugita
 shinsuizenji
 shintakaoka
+shintakashima
 shintakashimadaira
 shintakatoku
 shintamana
