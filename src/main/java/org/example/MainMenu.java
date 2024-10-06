@@ -9,16 +9,31 @@ import java.awt.event.ActionListener;
 
 public class MainMenu extends JFrame {
 
+    // Pastel Colors
+    public static final Color P_RED = new Color(255,179,186);
+    public static final Color P_YELLOW = new Color(255,255,186);
+    public static final Color P_GREEN = new Color(186,255,201);
+    public static final Color P_BLUE = new Color(186,225,255);
+    public static final Color P_PURPLE = new Color(225,186,255);
+
+    // Theme Colors
     public static final Color LIGHT_PINK = new Color(255, 199, 206);
     public static final Color PINK = new Color(255, 179, 186);
     public static final Color GRAY = new Color(55, 53, 63);
     public static final Color DARK_GRAY = new Color(35, 33, 43);
     public static final Color LIGHT_GRAY = new Color(95, 93, 103);
+    public static final Color LIGHTER_GRAY = new Color(165, 163, 173);
+
+    private int mouseX, mouseY;
+    public static final String VERSION = "0.0.1";
 
     public MainMenu() {
-        setTitle("Japanese Practice");
         setSize(1600, 900);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setUndecorated(true);
+
+        // Add the title bar to the frame
+        add(new CustomTitleBar(this), BorderLayout.NORTH);
 
         // GeoQuiz panel
         JPanel mainPanel = new JPanel();
@@ -36,10 +51,9 @@ public class MainMenu extends JFrame {
         topBar.add(titleLabel, BorderLayout.WEST);
 
         // Image icon on top right
-        ImageIcon icon = new ImageIcon("icon_image.png");
-        Image image = icon.getImage();
+        Image image = ImageLoader.loadImage("icon_image.png");
         Image imageResize = image.getScaledInstance(60, 60,  java.awt.Image.SCALE_SMOOTH);
-        icon = new ImageIcon(imageResize);
+        ImageIcon icon = new ImageIcon(imageResize);
         JLabel iconLabel = new JLabel(icon); // Update with your image
         topBar.add(iconLabel, BorderLayout.EAST);
 
@@ -51,10 +65,11 @@ public class MainMenu extends JFrame {
         buttonsPanel.setBackground(GRAY);
 
         // Geography quiz button (with image)
-        ImageIcon geoImage = new ImageIcon("geo_button_image.png");
+        Image geoImageLoad = ImageLoader.loadImage("geo_button_image.png");
+        ImageIcon geoImage = new ImageIcon(geoImageLoad);
         ImageIcon geoScaled = getScaledIcon(geoImage, 1.1);
 
-        JButton quizButton = new JButton(new ImageIcon("geo_button_image.png")); // Update with your image
+        JButton quizButton = new JButton(geoImage); // Update with your image
         quizButton.setPreferredSize(new Dimension(300, 150));
         quizButton.setBorderPainted(false);
         quizButton.setContentAreaFilled(false);
@@ -83,7 +98,8 @@ public class MainMenu extends JFrame {
         });
 
         // Shiritori button (with image)
-        ImageIcon shiritoriImage = new ImageIcon("blank_button.png");
+        Image shiritoriImageLoad = ImageLoader.loadImage("blank_button.png");
+        ImageIcon shiritoriImage = new ImageIcon(shiritoriImageLoad);
         ImageIcon shiritoriScaled = getScaledIcon(shiritoriImage, 1.1);
 
         JButton shiritoriButton = new JButton(shiritoriImage); // Update with your image
@@ -137,6 +153,12 @@ public class MainMenu extends JFrame {
         JPanel bottomPanel = new JPanel(new BorderLayout());
         bottomPanel.setBackground(DARK_GRAY);
         bottomPanel.add(exitButton, BorderLayout.EAST);
+
+        // Bottom note
+        JLabel note = new JLabel("hexaclient v" + VERSION);
+        note.setForeground(LIGHTER_GRAY);
+        bottomPanel.add(note, BorderLayout.WEST);
+
         mainPanel.add(bottomPanel, BorderLayout.SOUTH);
 
         // Add main panel to frame

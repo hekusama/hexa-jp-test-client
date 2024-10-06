@@ -11,7 +11,7 @@ public class Shiritori extends JFrame {
 
     public Shiritori(JFrame parentFrame) {
         parent = parentFrame;
-        setTitle("Empty");
+        setTitle("Shiritori Game");
         setSize(800, 600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());

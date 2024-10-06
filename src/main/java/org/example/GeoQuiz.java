@@ -1,5 +1,7 @@
 package org.example;
 
+import com.sun.tools.javac.Main;
+
 import javax.swing.*;
 import java.awt.*;
 import java.io.*;
@@ -42,9 +44,13 @@ public class GeoQuiz extends JFrame {
     public GeoQuiz(JFrame parentFrame) {
 
         parent = parentFrame;
-        setTitle("Geography Quiz");
+
+        setUndecorated(true);
         setSize(800, 640);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        // Add the title bar to the frame
+        add(new CustomTitleBar(this), BorderLayout.NORTH);
 
         JPanel mainPanel = new JPanel();
         mainPanel.setLayout(new BorderLayout());
@@ -87,7 +93,7 @@ public class GeoQuiz extends JFrame {
         // Top panel with the Back button
         backButton.setPreferredSize(new Dimension(100, 50));
         backButton.setForeground(Color.WHITE);
-        backButton.setBackground(MainMenu.LIGHT_PINK);
+        backButton.setBackground(MainMenu.PINK);
         backButton.setFont(new Font("Segoe UI", Font.BOLD, 16));
         backButton.setBorderPainted(false);
         backButton.setContentAreaFilled(true);
@@ -109,7 +115,7 @@ public class GeoQuiz extends JFrame {
         resetButton = new JButton("Reset");
         resetButton.setPreferredSize(new Dimension(100, 50));
         resetButton.setForeground(Color.WHITE);
-        resetButton.setBackground(MainMenu.LIGHT_PINK);
+        resetButton.setBackground(MainMenu.PINK);
         resetButton.setFont(new Font("Segoe UI", Font.BOLD, 16));
         resetButton.setBorderPainted(false);
         resetButton.setContentAreaFilled(true);
@@ -133,7 +139,8 @@ public class GeoQuiz extends JFrame {
         mainPanel.add(topPanel, BorderLayout.NORTH);
 
         // Japan Map
-        ImageIcon japan = new ImageIcon("japan.png");
+        Image japanLoad = ImageLoader.loadImage("japan.png");
+        ImageIcon japan = new ImageIcon(japanLoad);
         JLabel japanL = new JLabel(japan);
 
         // Input and status panel (center)
@@ -191,15 +198,30 @@ public class GeoQuiz extends JFrame {
         prefectureProgressBar = new JProgressBar(0, dataLoader.getPrefectures().size());
         stationProgressBar = new JProgressBar(0, dataLoader.getStations().size());
 
+        townProgressBar.setBorderPainted(false);
+        cityProgressBar.setBorderPainted(false);
+        prefectureProgressBar.setBorderPainted(false);
+        stationProgressBar.setBorderPainted(false);
+
+        townProgressBar.setForeground(MainMenu.P_RED);
+        cityProgressBar.setForeground(MainMenu.P_YELLOW);
+        prefectureProgressBar.setForeground(MainMenu.P_BLUE);
+        stationProgressBar.setForeground(MainMenu.P_PURPLE);
+
+        townProgressBar.setBackground(MainMenu.LIGHT_GRAY);
+        cityProgressBar.setBackground(MainMenu.LIGHT_GRAY);
+        prefectureProgressBar.setBackground(MainMenu.LIGHT_GRAY);
+        stationProgressBar.setBackground(MainMenu.LIGHT_GRAY);
+
         townProgressLabel = new JLabel("Stations Progress: 0/" + dataLoader.getTowns().size());
         cityProgressLabel = new JLabel("Cities Progress: 0/" + dataLoader.getCities().size());
         prefectureProgressLabel = new JLabel("Prefectures Progress: 0/" + dataLoader.getPrefectures().size());
         stationProgressLabel = new JLabel("Stations Progress: 0/" + dataLoader.getStations().size());
 
-        townProgressLabel.setForeground(Color.WHITE);
-        cityProgressLabel.setForeground(Color.WHITE);
-        prefectureProgressLabel.setForeground(Color.WHITE);
-        stationProgressLabel.setForeground(Color.WHITE);
+        townProgressLabel.setForeground(MainMenu.LIGHTER_GRAY);
+        cityProgressLabel.setForeground(MainMenu.LIGHTER_GRAY);
+        prefectureProgressLabel.setForeground(MainMenu.LIGHTER_GRAY);
+        stationProgressLabel.setForeground(MainMenu.LIGHTER_GRAY);
 
         JPanel progressPanel = new JPanel();
         progressPanel.setLayout(new GridLayout(4, 2));
@@ -230,13 +252,13 @@ public class GeoQuiz extends JFrame {
         // Filter options for the history
         filterComboBox = new JComboBox<>(new String[]{"All", "Cities", "Prefectures", "Stations", "Towns"});
         filterComboBox.setForeground(Color.WHITE);
-        filterComboBox.setBackground(MainMenu.LIGHT_GRAY);
+        filterComboBox.setBackground(MainMenu.LIGHTER_GRAY);
         filterComboBox.addActionListener(e -> updateHistoryDisplay());
 
         // Search field for filtering by name
         searchField = new JTextField();
         searchField.setForeground(Color.WHITE);
-        searchField.setBackground(MainMenu.LIGHT_GRAY);
+        searchField.setBackground(MainMenu.LIGHTER_GRAY);
         searchField.setColumns(10);
         searchField.addActionListener(e -> updateHistoryDisplay());
 
@@ -339,22 +361,22 @@ public class GeoQuiz extends JFrame {
         stationProgressLabel.setText("Stations Progress: " + stationProgress + "/" + progressTracker.getStationTotal());
 
         if (townProgress == progressTracker.getTownTotal()) {
-            townProgressBar.setForeground(Color.GREEN);
+            townProgressBar.setForeground(MainMenu.P_GREEN);
             townProgressLabel.setText("Towns Progress: Completed!");
         }
 
         if (cityProgress == progressTracker.getCityTotal()) {
-            cityProgressBar.setForeground(Color.GREEN);
+            cityProgressBar.setForeground(MainMenu.P_GREEN);
             cityProgressLabel.setText("Cities Progress: Completed!");
         }
 
         if (prefectureProgress == progressTracker.getPrefectureTotal()) {
-            prefectureProgressBar.setForeground(Color.GREEN);
+            prefectureProgressBar.setForeground(MainMenu.P_GREEN);
             prefectureProgressLabel.setText("Prefectures Progress: Completed!");
         }
 
         if (stationProgress == progressTracker.getStationTotal()) {
-            stationProgressBar.setForeground(Color.GREEN);
+            stationProgressBar.setForeground(MainMenu.P_GREEN);
             stationProgressLabel.setText("Stations Progress: Completed!");
         }
     }

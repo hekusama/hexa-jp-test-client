@@ -1,8 +1,7 @@
 package org.example;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,16 +27,20 @@ public class DataLoader {
     }
 
     private void loadCities(String filePath) throws IOException {
-        BufferedReader reader = new BufferedReader(new FileReader(filePath));
+        InputStream inputStream = getClass().getClassLoader().getResourceAsStream(filePath);
+        InputStreamReader inputReader = new InputStreamReader(inputStream, StandardCharsets.UTF_8);
+        BufferedReader reader = new BufferedReader(inputReader);
         String line;
         while ((line = reader.readLine()) != null) {
             cities.add(line.trim());
         }
-        reader.close();
+        inputReader.close();
     }
 
     private void loadPrefectures(String filePath) throws IOException {
-        BufferedReader reader = new BufferedReader(new FileReader(filePath));
+        InputStream inputStream = getClass().getClassLoader().getResourceAsStream(filePath);
+        InputStreamReader inputReader = new InputStreamReader(inputStream, StandardCharsets.UTF_8);
+        BufferedReader reader = new BufferedReader(inputReader);
         String line;
         while ((line = reader.readLine()) != null) {
             prefectures.add(line.trim());
@@ -46,7 +49,9 @@ public class DataLoader {
     }
 
     private void loadStations(String filePath) throws IOException {
-        BufferedReader reader = new BufferedReader(new FileReader(filePath));
+        InputStream inputStream = getClass().getClassLoader().getResourceAsStream(filePath);
+        InputStreamReader inputReader = new InputStreamReader(inputStream, StandardCharsets.UTF_8);
+        BufferedReader reader = new BufferedReader(inputReader);
         String line;
         while ((line = reader.readLine()) != null) {
             stations.add(line.trim());
@@ -55,7 +60,9 @@ public class DataLoader {
     }
 
     private void loadTowns(String filePath) throws IOException {
-        BufferedReader reader = new BufferedReader(new FileReader(filePath));
+        InputStream inputStream = getClass().getClassLoader().getResourceAsStream(filePath);
+        InputStreamReader inputReader = new InputStreamReader(inputStream, StandardCharsets.UTF_8);
+        BufferedReader reader = new BufferedReader(inputReader);
         String line;
         while ((line = reader.readLine()) != null) {
             towns.add(line.trim());
