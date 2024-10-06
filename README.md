@@ -12,7 +12,10 @@ Test client for Japanese related applications.
 - Download the latest release from release sidebar.
 - Unzip the zip file. (using 7zip or native extractor)
 - Run hexaclient.exe
-# PSA: PLEASE DO NOT RANDOMLY RUN FILES YOU RANDOMLY DOWNLOAD OFF THE INTERNET!!!
+# PSA:
+## PLEASE DO NOT RANDOMLY RUN FILES YOU RANDOMLY DOWNLOAD OFF THE INTERNET!!!
 Always check for viruses using virustotal.com
-Drag/drop exes you want to run. If it gets 1-3 yellow detections or 1 single red detection, it's usually fine.
-Of course, please run red-detected files AT YOUR OWN RISK
+Drag/drop exes you want to run. If it gets more than 2-3 yellow detections or 1 single red detection, DON'T RUN IT.
+Only run detected files if you trust the source.
+Of course, it could be a false positive.
+Unless you know what you're doing, please run red-detected files AT YOUR OWN RISK
