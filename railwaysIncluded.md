@@ -7,6 +7,7 @@
 - JR Shikoku
 - JR Kyushu
 - ALL Shinkansen
+### Kentetsu ALL LINES
 ### Other Tokyo surrounding area services
 - Tokyo Metro
 - Toei Subway
@@ -15,8 +16,11 @@
 - New Keisei Line
 - Yamaman Yūkarigaoka Line
 - Tobu
+- Keikyu
 - Rinkai Line
 - Enoshima Electric Railway
+### Chiba
+- Chiba Urban Monorail
 ### ALL of Hokkaido
 ### Kyushu
 - Fukuoka Subway

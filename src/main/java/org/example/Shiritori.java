@@ -10,31 +10,40 @@ public class Shiritori extends JFrame {
     private JFrame parent; // Reference to MainMenu
 
     public Shiritori(JFrame parentFrame) {
+
         parent = parentFrame;
-        setTitle("Shiritori Game");
-        setSize(800, 600);
+
+        setUndecorated(true);
+        setSize(800, 640);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLayout(new BorderLayout());
 
-        // Back button to return to main menu
-        JButton backButton = new JButton("Back");
-        setupUI(backButton);
+        // Add the title bar to the frame
+        add(new CustomTitleBar(this), BorderLayout.NORTH);
 
-        // Top panel
-        JPanel topPanel = new JPanel();
-        topPanel.setLayout(new BorderLayout());
-        topPanel.add(backButton, BorderLayout.WEST);
-        add(topPanel, BorderLayout.NORTH);
+        JPanel mainPanel = new JPanel();
+        mainPanel.setLayout(new BorderLayout());
+        mainPanel.setBackground(MainMenu.GRAY);
 
-        // Placeholder content in the center (can be expanded later)
-        JLabel placeholderLabel = new JLabel("You find yourself in a strange place...", SwingConstants.CENTER);
-        add(placeholderLabel, BorderLayout.CENTER);
+        JPanel topPanel = new JPanel(new BorderLayout());
+        topPanel.setBackground(MainMenu.PINK);
+
+        // Setup UI mainPanel
+        setupUI(mainPanel, topPanel);
+        add(mainPanel);
 
         setVisible(true);
     }
 
-    private void setupUI(JButton backButton) {
+    private void setupUI(JPanel mainPanel, JPanel topPanel) {
+
+        JButton backButton = new JButton("Back");
         backButton.setPreferredSize(new Dimension(100, 50));
+        backButton.setForeground(Color.WHITE);
+        backButton.setBackground(MainMenu.PINK);
+        backButton.setFont(new Font("Segoe UI", Font.BOLD, 16));
+        backButton.setBorderPainted(false);
+        backButton.setContentAreaFilled(true);
+        backButton.setFocusPainted(false); // Remove focus border on the button
         backButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -42,5 +51,9 @@ public class Shiritori extends JFrame {
                 dispose(); // Close the Shiritori window to free resources
             }
         });
+
+        // Top panel
+        topPanel.add(backButton, BorderLayout.WEST);
+        mainPanel.add(topPanel, BorderLayout.NORTH);
     }
 }

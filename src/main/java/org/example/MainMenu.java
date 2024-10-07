@@ -45,7 +45,7 @@ public class MainMenu extends JFrame {
         topBar.setLayout(new BorderLayout());
         topBar.setPreferredSize(new Dimension(800, 80));  // Set preferred size for the top bar
         topBar.setBackground(PINK);
-        JLabel titleLabel = new JLabel("Hexa JP test client");
+        JLabel titleLabel = new JLabel("    Hexa JP test client");
         titleLabel.setFont(new Font("Segoe UI", Font.BOLD, 48));
         titleLabel.setForeground(Color.WHITE);
         topBar.add(titleLabel, BorderLayout.WEST);
@@ -98,7 +98,7 @@ public class MainMenu extends JFrame {
         });
 
         // Shiritori button (with image)
-        Image shiritoriImageLoad = ImageLoader.loadImage("blank_button.png");
+        Image shiritoriImageLoad = ImageLoader.loadImage("shiritori_button.png");
         ImageIcon shiritoriImage = new ImageIcon(shiritoriImageLoad);
         ImageIcon shiritoriScaled = getScaledIcon(shiritoriImage, 1.1);
 
@@ -155,7 +155,10 @@ public class MainMenu extends JFrame {
         bottomPanel.add(exitButton, BorderLayout.EAST);
 
         // Bottom note
-        JLabel note = new JLabel("hexaclient v" + VERSION);
+        JLabel note = new JLabel("<html><blockquote>" +
+                "Version: hexaclient v" + VERSION + "<br>" +
+                "Host: JLink OpenJDK 23<br>" +
+                "Ⓡ 2024</blockquote></html>");
         note.setForeground(LIGHTER_GRAY);
         bottomPanel.add(note, BorderLayout.WEST);
 

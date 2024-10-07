@@ -28,26 +28,7 @@ public class ProgressTracker {
 
     // Method to check if input matches city, prefecture, or station and update progress
     public boolean checkName(String input, boolean allowCities, boolean allowPrefectures, boolean allowStations, boolean allowTowns) {
-        boolean matchFound = false;
-
-        if (allowCities && cities.contains(input)) {
-            cityProgress++;
-            matchFound = true;
-        }
-        if (allowPrefectures && prefectures.contains(input)) {
-            prefectureProgress++;
-            matchFound = true;
-        }
-        if (allowStations && stations.contains(input)) {
-            stationProgress++;
-            matchFound = true;
-        }
-        if (allowTowns && towns.contains(input)) {
-            townProgress++;
-            matchFound = true;
-        }
-
-        return matchFound;
+        return allowTowns && towns.contains(input) || allowCities && cities.contains(input) || allowPrefectures && prefectures.contains(input) || allowStations && stations.contains(input);
     }
 
     public void resetProgress() {

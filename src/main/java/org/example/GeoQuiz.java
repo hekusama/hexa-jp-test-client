@@ -3,6 +3,7 @@ package org.example;
 import com.sun.tools.javac.Main;
 
 import javax.swing.*;
+import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.io.*;
 import java.util.HashSet;
@@ -59,8 +60,6 @@ public class GeoQuiz extends JFrame {
         JPanel topPanel = new JPanel(new BorderLayout());
         topPanel.setBackground(MainMenu.PINK);
 
-        JButton backButton = new JButton("Back");
-
         // Load data from the separate files
         DataLoader dataLoader = new DataLoader("cities.txt", "prefectures.txt", "stations.txt", "towns.txt");
         ProgressTracker progressTracker = new ProgressTracker(dataLoader);
@@ -68,7 +67,7 @@ public class GeoQuiz extends JFrame {
         usedEntries = new HashSet<>();  // Initialize the set to track used inputs
 
         // Setup other UI components (input, checkboxes, progress bars, etc.)
-        setupUI(mainPanel, topPanel, backButton, progressTracker, dataLoader);
+        setupUI(mainPanel, topPanel, progressTracker, dataLoader);
 
         // Load progress from save file (if it exists)
         loadProgress(progressTracker);
@@ -88,9 +87,10 @@ public class GeoQuiz extends JFrame {
     }
 
     // UI setup method to organize the rest of the components
-    private void setupUI(JPanel mainPanel, JPanel topPanel, JButton backButton, ProgressTracker progressTracker, DataLoader dataLoader) {
+    private void setupUI(JPanel mainPanel, JPanel topPanel, ProgressTracker progressTracker, DataLoader dataLoader) {
 
         // Top panel with the Back button
+        JButton backButton = new JButton("Back");
         backButton.setPreferredSize(new Dimension(100, 50));
         backButton.setForeground(Color.WHITE);
         backButton.setBackground(MainMenu.PINK);
@@ -106,7 +106,7 @@ public class GeoQuiz extends JFrame {
         topPanel.add(backButton, BorderLayout.WEST); // Place the back button at the top left
 
         // Title
-        JLabel title = new JLabel("             Endless japanese geography quiz");
+        JLabel title = new JLabel("             Endless Japanese geography quiz");
         title.setForeground(Color.WHITE);
         title.setFont(new Font("Segoe UI", Font.BOLD, 24));
         topPanel.add(title, BorderLayout.CENTER);
@@ -154,7 +154,8 @@ public class GeoQuiz extends JFrame {
         inputField = new JTextField();
         inputField.setPreferredSize(new Dimension(200, 30));
         inputField.setForeground(Color.WHITE);
-        inputField.setBackground(MainMenu.LIGHT_GRAY);
+        inputField.setBackground(MainMenu.LIGHTER_GRAY);
+        inputField.setBorder(new LineBorder(MainMenu.LIGHT_GRAY, 2));
         inputPanel.add(inputField);
 
         statusLabel = new JLabel("Enter a town, city, prefecture, or train station.");
@@ -242,6 +243,7 @@ public class GeoQuiz extends JFrame {
         JPanel historyPanel = new JPanel();
         historyPanel.setLayout(new BorderLayout());
         historyPanel.setBackground(MainMenu.GRAY);
+        historyPanel.setBorder(new LineBorder(MainMenu.GRAY, 3));
 
         historyTextArea = new JTextArea(15, 20);
         historyTextArea.setEditable(false);
@@ -317,15 +319,19 @@ public class GeoQuiz extends JFrame {
         String flags = " ";
         if (progressTracker.isTown(input)) {
             flags += "(T) ";  // Mark as station
+            progressTracker.incrementTownProgress();
         }
         if (progressTracker.isCity(input)) {
             flags += "(C) ";  // Mark as city
+            progressTracker.incrementCityProgress();
         }
         if (progressTracker.isPrefecture(input)) {
             flags += "(P) ";  // Mark as prefecture
+            progressTracker.incrementPrefectureProgress();
         }
         if (progressTracker.isStation(input)) {
             flags += "(S) ";  // Mark as station
+            progressTracker.incrementStationProgress();
         }
 
         historyEntry = input + flags;
@@ -422,7 +428,7 @@ public class GeoQuiz extends JFrame {
         stationProgressBar.setValue(0);
 
         // Reset progress labels
-        townProgressLabel.setText("Towns Progress: 0/" + progressTracker.getCityTotal());
+        townProgressLabel.setText("Towns Progress: 0/" + progressTracker.getTownTotal());
         cityProgressLabel.setText("Cities Progress: 0/" + progressTracker.getCityTotal());
         prefectureProgressLabel.setText("Prefectures Progress: 0/" + progressTracker.getPrefectureTotal());
         stationProgressLabel.setText("Stations Progress: 0/" + progressTracker.getStationTotal());

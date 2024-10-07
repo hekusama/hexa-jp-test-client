@@ -76,6 +76,7 @@ akaigawa
 akaiwa
 akakuraonsen
 akama
+akameguchi
 akamine
 akamizu
 akasaka
@@ -88,6 +89,7 @@ akashina
 akatsuka
 akayu
 akebonobashi
+akeno
 akiaga
 akigawa
 akihabara
@@ -107,8 +109,10 @@ akkeshi
 akogashima
 akogi
 akui
+akuragawa
 amagasaki
 amagase
+amagatsuji
 amaharashi
 amaji
 amariko
@@ -117,11 +121,16 @@ amatsu
 amaya
 amori
 anabuki
+anagawa
+anamizu
+anamoriinari
 anan
 anayama
+ando
 anebetsu
 anegasaki
 anihata
+anjinzuka
 anjo
 annaka
 annakaharuna
@@ -136,6 +145,7 @@ aohara
 aohori
 aoidake
 aokura
+aomonoyokocho
 aomori
 aonogahara
 aonogo
@@ -146,6 +156,7 @@ aoto
 aoya
 aoyagi
 aoyama
+aoyamacho
 aoyamaitchome
 aozasa
 aozu
@@ -154,6 +165,7 @@ arahama
 araimachi
 arakawaoki
 araki
+aramoto
 arao
 arashima
 aratano
@@ -184,6 +196,7 @@ asakawa
 asakura
 asakusa
 asakusabashi
+asama
 asanai
 asanami
 asano
@@ -206,6 +219,7 @@ ashisawa
 ashiya
 aso
 asso
+asuka
 asuwa
 atago
 atami
@@ -247,6 +261,7 @@ awatomida
 awaya
 awayamakawa
 ayabe
+ayameike
 ayanocho
 ayaori
 ayaragi
@@ -312,6 +327,7 @@ bizenkatakami
 bizenkataoka
 bizennishiichi
 bizentai
+bojo
 bokoi
 bubaigawara
 bungokiyokawa
@@ -330,12 +346,14 @@ bushunagase
 buzennagasu
 buzenshoe
 buzenzenkoji
+byobugaura
 chanai
 chashinai
 chausuyama
 chayama
 chayamachi
 chiba
+chibakoen
 chibaminato
 chidori
 chiebun
@@ -373,6 +391,8 @@ chino
 chippubetsu
 chiraiotsu
 chisato
+chishirodai
+chishirodaikita
 chito
 chitose
 chiwa
@@ -381,6 +401,7 @@ chiyo
 chiyogaoka
 chiyokawa
 chiyokenchoguchi
+chiyozaki
 chizu
 chofu
 chojabaru
@@ -396,6 +417,7 @@ chugakko
 chugokukatsuyama
 chugun
 daido
+daifuku
 daigo
 daijingushita
 daikancho
@@ -403,6 +425,7 @@ daimon
 dainyu
 daisenguchi
 daishaka
+daishibashi
 daishimae
 daito
 daiyamuko
@@ -412,6 +435,7 @@ date
 datemombetsu
 doai
 dobukai
+dobutsukoen
 dogoyama
 doi
 doichi
@@ -419,6 +443,7 @@ dojima
 dojo
 dojoji
 dokkyodaigakumae
+domyoji
 dosen
 doshishamae
 dosokohama
@@ -471,10 +496,12 @@ echizenyakushi
 eda
 edagawa
 edamitsu
+edobashi
 edogawa
 edogawabashi
 edogawadai
 efue
+eganosho
 eguchi
 ei
 eiokawa
@@ -503,6 +530,7 @@ etchunakagawa
 etchuyamada
 etchuyatsuo
 ezuriko
+familykoemmae
 fubasami
 fuchigaki
 fuchinobe
@@ -513,6 +541,7 @@ fudonosawa
 fuji
 fujieda
 fujii
+fujiidera
 fujikawa
 fujikyuhighland
 fujimi
@@ -546,6 +575,7 @@ fukuchiyama
 fukudaimae
 fukudamachi
 fukue
+fukugami
 fukugawa
 fukuhara
 fukui
@@ -595,7 +625,10 @@ furuse
 furutakamatsuminami
 furutsu
 fusa
+fuse
 fushiki
+fushimi
+fushiya
 fussa
 futaba
 futagawa
@@ -614,8 +647,11 @@ futomi
 futsukaichi
 fuya
 gaienmae
+gakkenkitaikoma
+gakkennaratomigaoka
 gaku
 gakuden
+gakuenmae
 galayuzawa
 gamagori
 gamo
@@ -641,11 +677,13 @@ gobara
 gobira
 gobo
 gochaku
+gochi
 godai
 godo
 gofukumachi
 gohyakugawa
 goi
+goido
 goino
 gojikkoku
 gojo
@@ -677,6 +715,7 @@ gotsuhommachi
 gummasoja
 gummayawata
 gumyo
+gumyoji
 gunmafujioka
 gunmaharamachi
 gunmaotsu
@@ -702,13 +741,16 @@ haenosaki
 hage
 hagi
 hagino
+haginodai
 haguro
 haguroshita
 hagyu
+haibara
 haijima
 haiki
 hainuzuka
 haji
+hajinosato
 hakariishi
 hakata
 hakataminami
@@ -755,6 +797,8 @@ hanaten
 hanazono
 handa
 hane
+hanedaairportterminal3
+hanedaairportterminal12
 haneo
 hanoura
 hanyu
@@ -772,6 +816,7 @@ harimakatsuhara
 harimashingu
 harimatakaoka
 harimatokusa
+harinakano
 haruda
 haruka
 harukiba
@@ -780,12 +825,14 @@ haruta
 harutachi
 haruyama
 hase
+hasedera
 hashi
 hashibetsu
 hashihama
 hashikami
 hashikura
 hashimoto
+hashio
 hashioka
 hashirano
 hassamu
@@ -811,6 +858,7 @@ hatsushima
 hatsutomi
 hatta
 hattaushi
+hattorigawa
 haya
 hayadori
 hayaguchi
@@ -827,9 +875,13 @@ hazakawa
 hazawayokohamakokudai
 hebita
 hegawa
+heguri
+heijo
 heisei
 heiwadai
 heiwadori
+heiwajima
+hemi
 henashi
 hesaka
 heta
@@ -856,6 +908,7 @@ higashiabiko
 higashiainonai
 higashiakiru
 higashiaohara
+higashiaoyama
 higashiasahikawa
 higashiazuma
 higashibeppu
@@ -873,6 +926,7 @@ higashihachimori
 higashihagi
 higashihagoromo
 higashihanawa
+higashihanazono
 higashihanno
 higashihashisaki
 higashihie
@@ -880,6 +934,7 @@ higashihimeji
 higashihiroshima
 higashiichiki
 higashiikebukuro
+higashiikoma
 higashiisahaya
 higashiishiguro
 higashiiwatsuki
@@ -908,10 +963,12 @@ higashikushiro
 higashimaizuru
 higashimatsudo
 higashimatsue
+higashimatsusaka
 higashimatsuyama
 higashimihama
 higashiminato
 higashimizumaki
+higashimonzen
 higashimori
 higashimoro
 higashimukojima
@@ -1007,12 +1064,14 @@ hinatayama
 hineno
 hino
 hinobori
+hinodecho
 hinoharu
 hioka
 hira
 hirabayashi
 hirafu
 hiragishi
+hirahata
 hirai
 hiraijunction
 hiraishi
@@ -1027,6 +1086,7 @@ hiranai
 hirano
 hiraoka
 hirata
+hiratacho
 hirataki
 hiratsuka
 hiratsuto
@@ -1043,6 +1103,7 @@ hiroshimafreightterminal
 hirota
 hiroto
 hirowara
+hisai
 hisanohama
 hishiro
 hita
@@ -1123,6 +1184,7 @@ horie
 horigome
 horikiri
 horikirishobuen
+horinouchi
 horobetsu
 horomui
 horonobe
@@ -1141,12 +1203,15 @@ hosoya
 hota
 hotaka
 hottoyuda
+hozanji
+hozenji
 hozue
 hozukyo
 hozumi
 huistenbosch
 hyogo
 hyokiyama
+hyotanyama
 hyuga
 hyugakitakata
 hyugakutsukake
@@ -1163,6 +1228,7 @@ ibarame
 ibii
 ibusuki
 ichiba
+ichibu
 ichida
 ichigaya
 ichijima
@@ -1182,6 +1248,7 @@ ichinose
 ichinoseki
 ichinowari
 ichinuno
+ichio
 ichioka
 ichishi
 ichishiro
@@ -1189,11 +1256,14 @@ ichitana
 ichitsubo
 idagawa
 ide
+idogaya
 iejigawa
 ieki
 ienaka
 ieyama
 iga
+igakambe
+igakozu
 igami
 igashima
 igaueno
@@ -1216,14 +1286,18 @@ ikawasakura
 ikawashi
 ikazaki
 ikeba
+ikebe
 ikebukuro
 ikeda
 ikedaen
 ikenotani
+ikenoura
 ikenouraseaside
 ikezuki
 ikisan
 ikoinomura
+ikoma
+ikomasanjo
 ikuno
 ikunoya
 ikura
@@ -1241,6 +1315,7 @@ imaizumi
 imajuku
 imamiya
 imari
+imazato
 imazu
 imbe
 inabayashiro
@@ -1296,16 +1371,24 @@ isa
 isahaya
 isaryo
 isawaonsen
+iseasahi
+iseda
 isegi
 isehata
+iseishibashi
 isekamakura
 isekashiwazaki
 isekawaguchi
+isekawashima
+isematsumoto
+isenakagawa
+isenakahara
 iseoi
 iseokitsu
 isesaki
 iseshi
 isetakehara
+isewakamatsu
 iseyachi
 ishibashi
 ishibe
@@ -1322,6 +1405,7 @@ ishikarinumata
 ishikaritsukigata
 ishikawa
 ishikawacho
+ishikiri
 ishikoshi
 ishikura
 ishimine
@@ -1343,8 +1427,10 @@ isogo
 isohara
 isoichi
 isotake
+isoyama
 isshochi
 isuzugaoka
+isuzugawa
 itabashi
 itabashihoncho
 itabashikuyakushomae
@@ -1389,6 +1475,7 @@ iwakuni
 iwakura
 iwama
 iwamatsu
+iwami
 iwamifukumitsu
 iwamikawagoe
 iwamikawamoto
@@ -1480,6 +1567,7 @@ jimba
 jimbocho
 jimbohara
 jimmachi
+jimmuji
 jina
 jindai
 jinguji
@@ -1542,6 +1630,7 @@ kagaonsen
 kagato
 kagawa
 kageno
+kagetsusojiji
 kagohara
 kagoshima
 kagoshimachuo
@@ -1653,16 +1742,19 @@ kamimuragakuenmae
 kaminaka
 kaminakazato
 kaminocho
+kaminogo
 kaminojiri
 kaminokuni
 kaminome
 kaminosho
+kaminotaishi
 kaminoyamaonsen
 kamio
 kamioboro
 kamiogawa
 kamioi
 kamioka
+kamiooka
 kamiotsuki
 kamisakai
 kamishirataki
@@ -1672,6 +1764,7 @@ kamisugaya
 kamisuge
 kamisugi
 kamisuwa
+kamitobaguchi
 kamitode
 kamiusuki
 kamiuwa
@@ -1693,6 +1786,7 @@ kamonomiya
 kamuriki
 kanae
 kanagawa
+kanagawashimmachi
 kanahashi
 kanaishihara
 kanamachi
@@ -1704,6 +1798,8 @@ kanayagawa
 kanayama
 kanayasawa
 kanazawa
+kanazawabunko
+kanazawahakkei
 kanazuka
 kanda
 kandatsu
@@ -1750,13 +1846,18 @@ kasai
 kasairinkaikoen
 kasairinkaipark
 kasama
+kasanui
 kasaoka
+kasashiho
 kasashima
 kaseda
 kasei
 kashiba
+kashiharajingumae
+kashiharajingunishiguchi
 kashii
 kashiijingu
+kashikojima
 kashima
 kashimada
 kashimadai
@@ -1766,6 +1867,7 @@ kashiwa
 kashiwabara
 kashiwagidaira
 kashiwara
+kashiwaraminamiguchi
 kashiwazaki
 kasose
 kassemba
@@ -1775,13 +1877,17 @@ kasugai
 kasugaicho
 kasugayama
 kasukabe
+kasumigaoka
 kasumigaseki
+kasumigaura
+kasumori
 kata
 katahama
 katakura
 katamachi
 katano
 kataoka
+katashimo
 katata
 kato
 katori
@@ -1799,13 +1905,22 @@ katsuura
 kawabata
 kawabe
 kawabeoki
+kawachiamami
+kawachieiwa
+kawachihanazono
 kawachiiwafune
 kawachikatakami
+kawachikokubu
+kawachikosaka
+kawachimatsubara
+kawachinagano
+kawachiyamamoto
 kawado
 kawageta
 kawagishi
 kawagoe
 kawagoeshi
+kawagoetomisuhara
 kawaguchi
 kawaguchiko
 kawahara
@@ -1813,6 +1928,7 @@ kawahigashi
 kawahira
 kawai
 kawainishi
+kawaitakaoka
 kawaji
 kawakado
 kawake
@@ -1829,9 +1945,11 @@ kawanoe
 kawarada
 kawaraguchimihagino
 kawaraishi
+kawaramachi
 kawarayuonsen
 kawasa
 kawasaki
+kawasakidaishi
 kawasakiguchi
 kawasakishimmachi
 kawase
@@ -1859,6 +1977,16 @@ kazusaokitsu
 kebaraichi
 kega
 keibajomae
+keikyuhigashikanagawa
+keikyukamata
+keikyukawasaki
+keikyukurihama
+keikyunagasawa
+keikyuotsu
+keikyushinkoyasu
+keikyutaura
+keikyutomioka
+keikyutsurumi
 keiseifunabashi
 keiseikoiwa
 keiseinakayama
@@ -1877,6 +2005,8 @@ keiseiyawata
 keisen
 kembuchi
 kemigawahama
+kenchomae
+kenritsudaigaku
 kesennuma
 keyakidai
 kiba
@@ -1918,6 +2048,7 @@ kikuma
 kikuna
 kikuta
 kikyo
+kikyogaoka
 kimachi
 kimi
 kimiidera
@@ -1932,6 +2063,22 @@ kinosakionsen
 kinoshita
 kinoyama
 kinshicho
+kintetsugose
+kintetsuhatta
+kintetsukanie
+kintetsukoriyama
+kintetsumiyazu
+kintetsunagashima
+kintetsunagoya
+kintetsunara
+kintetsunippombashi
+kintetsushimoda
+kintetsushinjo
+kintetsutambabashi
+kintetsutomida
+kintetsuyao
+kintetsuyatomi
+kintetsuyokkaichi
 kinugasa
 kinugawakoen
 kinugawaonsen
@@ -1946,6 +2093,7 @@ kiryu
 kisa
 kisakata
 kisarazu
+kishi
 kishibe
 kishimoto
 kisofukushima
@@ -1996,6 +2144,8 @@ kitakogane
 kitakomatsu
 kitakonosu
 kitakoshigaya
+kitakurihama
+kitakusu
 kitakyushufreightterminal
 kitamata
 kitamatsudo
@@ -2025,10 +2175,12 @@ kitasando
 kitasanjo
 kitasendai
 kitasenju
+kitashinagawa
 kitashinchi
 kitashinoda
 kitashirakawa
 kitatakasaki
+kitatanabe
 kitatengachaya
 kitatoda
 kitatokiwa
@@ -2060,6 +2212,7 @@ kiyosumishirakawa
 kiyotake
 kizaki
 kizu
+kizugawadai
 kizukuri
 kizurikamikita
 ko
@@ -2071,6 +2224,7 @@ kobayashi
 kobe
 kobi
 koboke
+koboreguchi
 koboro
 kobuchi
 kobuchizawa
@@ -2079,6 +2233,7 @@ kochishogyomae
 koda
 kodama
 kodenmacho
+kodo
 kodohomachigawa
 kodomonokuni
 koen
@@ -2087,6 +2242,7 @@ kofu
 kofuku
 koga
 kogane
+koganecho
 koganei
 koganezawa
 koge
@@ -2096,6 +2252,7 @@ kohata
 kohoku
 koide
 koikawa
+koishiro
 koiwa
 koiwagawa
 koiwai
@@ -2103,7 +2260,9 @@ koizumi
 koizumimachi
 kojima
 kojimachi
+kojimashinden
 kojiro
+kojiya
 kojohama
 koka
 kokawa
@@ -2121,10 +2280,12 @@ kokuritsukyogijo
 kokusaitenjijo
 koma
 komachiya
+komada
 komagamine
 komagane
 komagata
 komagatake
+komagatani
 komagawa
 komagome
 komanaki
@@ -2132,8 +2293,10 @@ komatsu
 komatsukawa
 kombumori
 kome
+komeno
 komi
 komiya
+komono
 komorie
 komoro
 konagai
@@ -2165,6 +2328,7 @@ kosagawa
 kosagoe
 kosano
 kosei
+koshibe
 koshienguchi
 koshigahama
 koshigaya
@@ -2192,6 +2356,7 @@ kowashozu
 koyaguchi
 koyama
 koyanohata
+koyasu
 koyaura
 koyodai
 koyodo
@@ -2220,6 +2385,7 @@ kuguhara
 kuguno
 kuji
 kujiranami
+kujo
 kuki
 kumagane
 kumagawa
@@ -2261,6 +2427,7 @@ kurisawa
 kuriyama
 kurobaru
 kurobeunazukionsen
+kuroda
 kurodahara
 kurodasho
 kuroe
@@ -2287,6 +2454,7 @@ kusano
 kusatsu
 kuse
 kushi
+kushida
 kushidashrine
 kushigahama
 kushikino
@@ -2294,9 +2462,13 @@ kushima
 kushimoto
 kushiro
 kushiroshitsugen
+kusu
+kusurimizu
 kutano
 kutchan
 kute
+kutsukake
+kutsukawa
 kuwagawa
 kuwana
 kuwanagawa
@@ -2320,6 +2492,7 @@ kyowa
 kyozuka
 kyudaigakkentoshi
 kyuhoji
+kyuhojiguchi
 kyuragi
 kyusandaimae
 kyusendo
@@ -2327,6 +2500,7 @@ kyushirataki
 kyushukodaimae
 lavenderfarm
 mabashi
+maborikaigan
 machida
 machiya
 maebara
@@ -2381,6 +2555,7 @@ masaki
 mashike
 mashu
 masuda
+masuga
 masukata
 masuo
 masuura
@@ -2396,6 +2571,7 @@ matsudacho
 matsudo
 matsudoshinden
 matsue
+matsugasaki
 matsugaura
 matsugishi
 matsuhisa
@@ -2419,6 +2595,7 @@ matsushita
 matsuyama
 matsuyamamachi
 matsuzaki
+matsuzuka
 maya
 mede
 mega
@@ -2435,6 +2612,7 @@ mibu
 michikawa
 michinoo
 michinoue
+mida
 midaregawa
 midori
 midorigaoka
@@ -2446,6 +2624,7 @@ miemachi
 mihama
 mihara
 miharu
+mihata
 mihomisumi
 mii
 miinohara
@@ -2468,6 +2647,7 @@ mikawatogo
 mikazuki
 mikekado
 mikisato
+mikkaichi
 mikumo
 mikunigaoka
 mikuriya
@@ -2482,6 +2662,7 @@ mimasakaosaki
 mimasakasendai
 mimasakatakio
 mimata
+miminashi
 mimitsu
 mimomi
 minabe
@@ -2498,6 +2679,7 @@ minamifukuoka
 minamifukushima
 minamifunabashi
 minamifuruya
+minamigaoka
 minamigotemba
 minamigyotoku
 minamihakui
@@ -2507,6 +2689,7 @@ minamihashimoto
 minamihikone
 minamihoronobe
 minamihyuga
+minamiikoma
 minamiishii
 minamiiwakuni
 minamiiyo
@@ -2537,6 +2720,7 @@ minamioita
 minamiomachi
 minamiomine
 minamionoda
+minamiota
 minamiotari
 minamiotaru
 minamipippu
@@ -2570,6 +2754,7 @@ minamiyorii
 minamiyoshida
 minamiyufu
 minamiyukuhashi
+minatocho
 minatomirai
 minawa
 mine
@@ -2592,6 +2777,7 @@ mirasaka
 mirozu
 misaki
 misakigaoka
+misakiguchi
 misakubo
 misato
 misedani
@@ -2614,7 +2800,9 @@ mitsumatsu
 mitsuoka
 mitsuseki
 mitsutoge
+mitsuwadai
 miura
+miurakaigan
 miwa
 miwasaki
 miyada
@@ -2629,7 +2817,10 @@ miyako
 miyakonojo
 miyakoshi
 miyama
+miyamachi
+miyamado
 miyamae
+miyamaki
 miyamori
 miyano
 miyanohira
@@ -2669,6 +2860,8 @@ momodani
 momonokawa
 momouchi
 momoyama
+momoyamagoryomae
+momozono
 momponai
 monden
 monoi
@@ -2691,6 +2884,7 @@ motomachi
 motomachichukagai
 motomiya
 motonakagoya
+motosanjoguchi
 mototate
 motowanishi
 motoyama
@@ -2698,6 +2892,7 @@ motoyawata
 motoyoshi
 motozenkoji
 mozu
+muda
 muden
 mugi
 muikamachi
@@ -2705,6 +2900,7 @@ mukaibara
 mukaichiba
 mukaigawara
 mukaihara
+mukaijima
 mukainada
 mukainoharu
 mukainoshiro
@@ -2715,6 +2911,7 @@ murai
 murakami
 murasakino
 murayama
+muroguchiono
 muromi
 muroran
 musa
@@ -2741,6 +2938,7 @@ mutsumorita
 mutsusawabe
 mutsushirahama
 mutsutsuruda
+mutsuura
 mutsuyanagita
 mutsuyokohama
 muya
@@ -2749,8 +2947,11 @@ myogadani
 myohoji
 myoji
 myojin
+myojo
 myokaku
 myokokujimae
+nabari
+nabata
 nabekura
 nabeshima
 nachi
@@ -2777,6 +2978,7 @@ nagasaka
 nagasaki
 nagasato
 nagasawa
+nagase
 nagashima
 nagashinojo
 nagasu
@@ -2803,6 +3005,7 @@ nagi
 nagisa
 nagiso
 nago
+nagonoura
 nagoya
 nagusa
 nahaairport
@@ -2820,6 +3023,7 @@ nakafunyu
 nakafurano
 nakagami
 nakagawa
+nakagawara
 nakagaya
 nakagomi
 nakagoya
@@ -2833,6 +3037,7 @@ nakaisamurai
 nakaitabashi
 nakajo
 nakakawabe
+nakakomono
 nakama
 nakameguro
 nakamita
@@ -2840,6 +3045,7 @@ nakamyo
 nakano
 nakanobu
 nakanofujimicho
+nakanogo
 nakanohigashi
 nakanojo
 nakanosakae
@@ -2874,6 +3080,7 @@ nakayamaguchi
 nakayamajuku
 nakofunakata
 nakoso
+namamugi
 namaze
 namazuta
 namegawa
@@ -2971,14 +3178,18 @@ niizaki
 niizato
 nijinomatsubara
 nijo
+nijojinjaguchi
+nijozan
 nijubashimae
 nikaho
+nikaido
 nikenya
 niki
 nikko
 nima
 ningyocho
 ninohe
+ninokuchi
 ninomiya
 nippori
 niragawa
@@ -2989,6 +3200,7 @@ niseko
 nishiachi
 nishiaioi
 nishiakashi
+nishiaoyama
 nishiarai
 nishibara
 nishibukuro
@@ -3003,6 +3215,7 @@ nishigahara
 nishigaho
 nishigawara
 nishigifu
+nishigishi
 nishigoryo
 nishihachioji
 nishihamada
@@ -3047,6 +3260,7 @@ nishinaka
 nishinakadori
 nishinasuno
 nishinippori
+nishinokyo
 nishinomiya
 nishinomiyanajio
 nishiobihiro
@@ -3080,6 +3294,7 @@ nishisugamo
 nishitachikawa
 nishitakashimadaira
 nishitakaya
+nishitawaramoto
 nishitoyama
 nishitsubame
 nishitsuruga
@@ -3124,6 +3339,7 @@ noheji
 nojiri
 nokanan
 noke
+nokendai
 nomachi
 nonodake
 nonokuchi
@@ -3132,6 +3348,8 @@ nose
 noshiro
 notobe
 notogawa
+notokashima
+notonakajima
 notoninomiya
 noya
 nozaki
@@ -3140,6 +3358,7 @@ nozawa
 nozoki
 nukada
 nukanan
+nukata
 nukazawa
 nukumi
 nukuri
@@ -3151,17 +3370,21 @@ numata
 numazu
 nunobe
 nunohara
+nunose
 nunoshida
 nyugawa
 nyuno
+oada
 oami
 oasa
 obaku
 obama
+obaneen
 obara
 obarino
 obasenishikodaimae
 obasute
+obata
 obatake
 obi
 obihiro
@@ -3220,6 +3443,8 @@ ogose
 ogotoonsen
 oguchi
 oguni
+ogura
+oguradai
 ogushigo
 ohanajaya
 ohara
@@ -3246,6 +3471,7 @@ oka
 okabana
 okabe
 okachimachi
+okadera
 okama
 okami
 okamoto
@@ -3295,11 +3521,14 @@ ominakasho
 ominato
 omishiotsu
 omitakashima
+omitsu
 omiya
 omiyakoen
 omochanomachi
 omoigawa
 omori
+omorikaigan
+omorimachi
 omoromachi
 omoshiroyamakogen
 omotesando
@@ -3319,6 +3548,7 @@ onigase
 onigoe
 onishi
 onizuka
+onji
 onjuku
 onnenai
 ono
@@ -3343,6 +3573,7 @@ onuki
 onuma
 onumakoen
 ooka
+oppama
 orangetown
 orihara
 orii
@@ -3353,10 +3584,14 @@ oroku
 oryuzako
 osafune
 osaka
+osakaabenobashi
 osakabe
 osakajokitazume
 osakajokoen
+osakakyoikudaimae
+osakanamba
 osakatemmangu
+osakauehommachi
 osaki
 osakura
 osamunai
@@ -3374,6 +3609,7 @@ oshimanumajiri
 oshimasawara
 oshimatobetsu
 oshimatsuruoka
+oshimi
 oshinozucho
 oshioe
 oshirakawa
@@ -3406,6 +3642,7 @@ otoineppu
 otome
 otomo
 otori
+otorii
 otoshi
 otoshibe
 otsu
@@ -3476,6 +3713,7 @@ ritto
 rokken
 rokkomichi
 rokugo
+rokugodote
 rokuhara
 rokujizo
 rokujo
@@ -3508,10 +3746,12 @@ saigane
 saigata
 saijo
 saiki
+saiku
 saitamashintoshin
 saitozaki
 saka
 sakado
+sakaecho
 sakahogi
 sakaida
 sakaide
@@ -3519,6 +3759,7 @@ sakaimachi
 sakaiminato
 sakaishi
 sakakami
+sakakibaraonsenguchi
 sakakita
 sakamachi
 sakamoto
@@ -3536,6 +3777,7 @@ sakihana
 sakimori
 sakkuru
 sako
+sakogi
 sakoshi
 saku
 sakudaira
@@ -3545,6 +3787,7 @@ sakuma
 sakunami
 sakura
 sakuradamon
+sakuragi
 sakuragicho
 sakurai
 sakurajima
@@ -3554,12 +3797,15 @@ sakuranomiya
 sakuraoka
 sakurashukugawa
 sakurazaka
+sakusabe
 sakuuminokuchi
 samani
 sambommatsu
 sambommatsuguchi
 same
 samegai
+samezu
+samitagawa
 sammaibashi
 sammi
 samukawa
@@ -3658,6 +3904,7 @@ seno
 senoo
 senrioka
 sentoku
+senzai
 senzaki
 senzu
 seppu
@@ -3670,10 +3917,12 @@ setoishi
 setose
 settsumotoyama
 settsutonda
+seyakitaguchi
 shadai
 shaguma
 shake
 shakubetsu
+shakudo
 shibahashi
 shibahira
 shibajuku
@@ -3697,6 +3946,8 @@ shigeto
 shigetomi
 shigeyasu
 shigino
+shigisanguchi
+shigisanshita
 shii
 shiida
 shiishiba
@@ -3712,15 +3963,20 @@ shikido
 shikijiki
 shikinami
 shikishima
+shimaakasaki
 shimada
 shimagahara
+shimaisobe
 shimamatsu
 shimamoto
 shimanoshita
 shimao
+shimashimmei
 shimata
 shimatakamatsu
 shimauchi
+shimayokoyama
+shimbamba
 shimbashi
 shimizu
 shimizuhara
@@ -3748,6 +4004,7 @@ shimohojo
 shimohyogo
 shimoichi
 shimoichida
+shimoichiguchi
 shimoimaichi
 shimoisaka
 shimoitabashi
@@ -3844,12 +4101,14 @@ shinhanamaki
 shinhikida
 shinhirano
 shinhiro
+shinhosono
 shinichi
 shiniizuka
 shinimamiya
 shinimamiyaekimae
 shininokuchi
 shinisesaki
+shinishikiri
 shinitabashi
 shiniwakuni
 shinji
@@ -3896,9 +4155,11 @@ shinochanomizu
 shinodayama
 shinohara
 shinohirashita
+shinoji
 shinokachimachi
 shinokubo
 shinome
+shinomiya
 shinomura
 shinomuta
 shinonoi
@@ -3907,6 +4168,7 @@ shinonomichi
 shinosaka
 shinotanoshike
 shinotaru
+shinotsu
 shinotsuka
 shinozaki
 shinozuka
@@ -3919,6 +4181,7 @@ shinshimonoseki
 shinshirakawa
 shinshiraoka
 shinshiro
+shinsho
 shinsugita
 shinsuizenji
 shintakaoka
@@ -3926,6 +4189,7 @@ shintakashima
 shintakashimadaira
 shintakatoku
 shintamana
+shintanabe
 shintochigi
 shintoku
 shintomicho
@@ -3943,12 +4207,14 @@ shinyubari
 shiodome
 shiogama
 shiogo
+shiohama
 shioiri
 shiojiri
 shiokari
 shiokawa
 shiomachi
 shiomi
+shionomiya
 shionosawa
 shiotsu
 shioya
@@ -3959,13 +4225,16 @@ shiraichi
 shirakamidaketozanguchi
 shirakawa
 shirakawaguchi
+shiraki
 shirakiyama
+shiraniwadai
 shiranuka
 shiraoi
 shiraoka
 shirasaka
 shirasawa
 shirataki
+shiratsuka
 shiretokoshari
 shiriuchi
 shirogahara
@@ -3975,6 +4244,7 @@ shiroishizao
 shirokanedai
 shirokanetakanawa
 shirokitakoendori
+shiroko
 shiromaru
 shironishi
 shishibu
@@ -3987,6 +4257,7 @@ shitte
 shiwachi
 shiwachuo
 shiwaguchi
+shiyakushomae
 shizu
 shizugawa
 shizuhama
@@ -4013,6 +4284,7 @@ shukugawara
 shukuin
 shukunohe
 shumombetsu
+shuntokumichi
 shuri
 sobanokami
 sobudaishita
@@ -4033,6 +4305,7 @@ sonogi
 sosanji
 sotaro
 spaceworld
+sports center
 suda
 sue
 suechuo
@@ -4080,12 +4353,15 @@ susami
 susenji
 susono
 suwa
+suzukashi
+suzukicho
 suzumeda
 suzumenomiya
 suzurannosato
 tabaruzaka
 tabata
 tabuse
+tachiaigawa
 tachibana
 tachikawa
 tachiki
@@ -4103,6 +4379,7 @@ tagi
 tagiri
 tagokura
 taiji
+taimadera
 tainohama
 tainose
 tairadate
@@ -4119,7 +4396,9 @@ tajiri
 taka
 takachaya
 takada
+takadahonzan
 takadanobaba
+takadashi
 takagari
 takagi
 takagimachi
@@ -4135,6 +4414,7 @@ takajo
 takaku
 takamatsu
 takamatsucho
+takaminosato
 takamitsu
 takamizu
 takanabe
@@ -4143,6 +4423,7 @@ takanawagateway
 takanekido
 takanekodan
 takano
+takanohara
 takanosu
 takao
 takaoka
@@ -4164,9 +4445,13 @@ takatori
 takatsu
 takatsuka
 takatsuki
+takatsuno
+takawashi
 takaya
 takayama
 takayanagi
+takayasu
+takayasuyama
 take
 takebashi
 takebe
@@ -4187,6 +4472,7 @@ takeura
 takezawa
 taki
 takibe
+takidanifudo
 takifudo
 takihama
 takihara
@@ -4257,11 +4543,14 @@ tatsumi
 tatsumichi
 tatsuno
 tatsuokajo
+tatsurahama
 tatsuta
+tatsutagawa
 tatsutaguchi
 taura
 tawarada
 tawaramachi
+tawaramoto
 tayama
 tayoro
 tayoshi
@@ -4272,6 +4561,7 @@ tedakouranishi
 tehara
 teine
 temma
+tendai
 tendo
 tendominami
 tenjin
@@ -4279,6 +4569,7 @@ tenjingawa
 tenjinminami
 tenjinnomori
 tenjinyama
+tenkubashi
 tenno
 tennodai
 tennoji
@@ -4290,6 +4581,7 @@ tenryugawa
 tenryukyo
 tento
 tenwa
+terada
 teradacho
 teradomari
 terajicho
@@ -4303,6 +4595,7 @@ tetaru
 toasa
 toba
 tobata
+tobe
 tobetsu
 tobudobutsukoen
 tobuizumi
@@ -4338,6 +4631,7 @@ tohokufukushidaimae
 tohori
 toide
 toikanbetsu
+toji
 tojinmachi
 tojo
 tokachishimizu
@@ -4379,17 +4673,22 @@ tomidahama
 tomihara
 tomikawa
 tomine
+tomio
 tomioka
 tomita
 tomiura
+tomiyoshi
 tomobe
 tomura
 tona
 tonami
+tondabayashi
+tondabayashinishiguchi
 tono
 tonohetsuri
 tonoki
 tonomi
+tonosho
 torahime
 torami
 toranomon
@@ -4397,6 +4696,7 @@ toranomonhills
 toride
 torigata
 torii
+toriimae
 torinoki
 torisawa
 toro
@@ -4448,6 +4748,7 @@ toyoshimizu
 toyoshina
 toyosu
 toyotomi
+toyotsuueno
 toyoura
 tsu
 tsubaki
@@ -4457,6 +4758,7 @@ tsubata
 tsubogawa
 tsuboi
 tsubojiri
+tsubosakayama
 tsuchitaru
 tsuchiura
 tsuchiyama
@@ -4491,7 +4793,9 @@ tsukinoki
 tsukinowa
 tsukioka
 tsukishima
+tsukiyama
 tsukuda
+tsukuihama
 tsukumi
 tsukuno
 tsumazaki
@@ -4513,6 +4817,7 @@ tsurui
 tsurumai
 tsurumaru
 tsurumi
+tsurumiichiba
 tsurumiono
 tsurunuma
 tsuruoka
@@ -4522,12 +4827,15 @@ tsurushi
 tsuruta
 tsuruwa
 tsushimanomiya
+tsushimmachi
+tsutsui
 tsutsujigaoka
 tsuwano
 tsuya
 tsuyama
 tsuyamaguchi
 tsuzu
+tsuzumigaura
 ubado
 ubara
 ubashima
@@ -4556,6 +4864,7 @@ uenohara
 uenohirokoji
 uenookachimachi
 uenoshiba
+ugata
 uge
 ugohonjo
 ugoiizuka
@@ -4570,8 +4879,10 @@ uguisuno
 ugusu
 uji
 ujiie
+ujiyamada
 ukahongo
 ukai
+ukiana
 ukiha
 ukimafunado
 ukui
@@ -4583,6 +4894,7 @@ umegato
 umejima
 umekojikyotonishi
 umesato
+umeyashiki
 umezako
 umi
 umijiri
@@ -4592,6 +4904,7 @@ umishibaura
 undokoen
 une
 unebi
+unebigoryomae
 unga
 universalcity
 uno
@@ -4602,6 +4915,7 @@ unuma
 uonumanakajo
 uonumatanaka
 uozumi
+uraga
 urahoro
 urakami
 urakawa
@@ -4615,6 +4929,7 @@ urayasu
 ureshinoonsen
 urizura
 urushiyama
+uryudo
 usa
 usami
 ushida
@@ -4673,6 +4988,7 @@ wadazuka
 wado
 wajiro
 wakaba
+wakaeiwata
 wakai
 wakamatsu
 wakamatsukawada
@@ -4726,12 +5042,14 @@ yabuzuka
 yachiho
 yachimata
 yachiyodai
+yaenosato
 yaga
 yagami
 yagawa
 yagawara
 yagi
 yagihara
+yaginishiguchi
 yagisaki
 yagoshi
 yagoshima
@@ -4756,6 +5074,7 @@ yakumo
 yakuriguchi
 yamabe
 yamabuki
+yamadagawa
 yamadakamiguchi
 yamadanishimachi
 yamadera
@@ -4783,10 +5102,15 @@ yamashirotaga
 yamashita
 yamate
 yamato
+yamatoasakura
 yamatofutami
 yamatogawa
+yamatokamiichi
 yamatokoizumi
+yamatosaidaiji
 yamatoshinjo
+yamatotakada
+yamatoyagi
 yamatsuriyama
 yamazaki
 yamoto
@@ -4795,6 +5119,7 @@ yamuramachi
 yanaba
 yanabaskijomae
 yanagawa
+yanagi
 yanagigaura
 yanagihara
 yanagikoji
@@ -4824,6 +5149,7 @@ yasuoka
 yasuura
 yasuushi
 yasuzuka
+yata
 yatagawa
 yatake
 yatomi
@@ -4859,6 +5185,7 @@ yokoma
 yokoo
 yokoshiba
 yokosuka
+yokosukachuo
 yokota
 yokote
 yokoyama
@@ -4878,6 +5205,7 @@ yoshida
 yoshidaguchi
 yoshiikeonsenmae
 yoshikawa
+yoshikawakoen
 yoshikawaminami
 yoshimatsu
 yoshimi
@@ -4889,8 +5217,10 @@ yoshino
 yoshinobu
 yoshinogarikoen
 yoshinoguchi
+yoshinojingu
 yoshio
 yoshiokakaitei
+yoshita
 yoshitomi
 yoshiura
 yoshiwara
@@ -4906,6 +5236,7 @@ yowara
 yoyogi
 yoyogikoen
 yoyogiuehara
+yrpnobi
 yu
 yuasa
 yubari
@@ -4937,6 +5268,7 @@ yunomoto
 yunotai
 yunoto
 yunotsu
+yunoyamaonsen
 yura
 yurakucho
 yusato
@@ -4945,6 +5277,7 @@ yusu
 yutama
 yuyaonsen
 yuza
+yuzaki
 yuzawa
 yuzeonsen
 zaikoji
@@ -4957,4 +5290,6 @@ zentsuji
 zeze
 zoda
 zoshigaya
+zoshiki
 zushi
+zushihayama
