@@ -7,7 +7,7 @@
 - JR Shikoku
 - JR Kyushu
 - ALL Shinkansen
-### Kentetsu ALL LINES
+### Kintetsu ALL LINES
 ### Other Tokyo surrounding area services
 - Tokyo Metro
 - Toei Subway
