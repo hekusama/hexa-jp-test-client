@@ -3,6 +3,8 @@ package org.example;
 import javax.swing.*;
 import javax.swing.border.LineBorder;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.*;
 import java.util.HashSet;
 import java.util.List;
@@ -35,10 +37,19 @@ public class GeoQuiz extends JFrame {
     private static JTextField searchField;
     private static List<String> history;
     private static Set<String> usedEntries;  // Tracks already entered inputs
+
     private static JButton resetButton;
+    private static JButton backButton;
+    private static JButton timedButton;
+    private static ProgressTracker progressTracker;
+
+    private static String timeframe;
+    private JLabel timerLabel;
+    private Timer countdownTimer;
+    private long timeRemaining; // Time in seconds
 
     private JFrame parent; // Reference to MainMenu
-    private static final String SAVE_FILE = "geo_save.txt";  // Save file location
+    private static final String SAVE = "geo_save.txt";  // Save file location
 
     public GeoQuiz(JFrame parentFrame) {
 
@@ -60,17 +71,17 @@ public class GeoQuiz extends JFrame {
 
         // Load data from the separate files
         DataLoader dataLoader = new DataLoader("cities.txt", "prefectures.txt", "stations.txt", "towns.txt");
-        ProgressTracker progressTracker = new ProgressTracker(dataLoader);
+        progressTracker = new ProgressTracker(dataLoader);
         history = new ArrayList<>();
         usedEntries = new HashSet<>();  // Initialize the set to track used inputs
 
         // Setup other UI components (input, checkboxes, progress bars, etc.)
-        setupUI(mainPanel, topPanel, progressTracker, dataLoader);
+        setupUI(mainPanel, topPanel, dataLoader);
 
-        // Load progress from save file (if it exists)
-        loadProgress(progressTracker);
+        // Load progress from SAVE file (if it exists)
+        loadProgress();
 
-        // Set up a window listener to save progress on close
+        // Set up a window listener to SAVE progress on close
         addWindowListener(new java.awt.event.WindowAdapter() {
             @Override
             public void windowClosing(java.awt.event.WindowEvent windowEvent) {
@@ -85,10 +96,10 @@ public class GeoQuiz extends JFrame {
     }
 
     // UI setup method to organize the rest of the components
-    private void setupUI(JPanel mainPanel, JPanel topPanel, ProgressTracker progressTracker, DataLoader dataLoader) {
+    private void setupUI(JPanel mainPanel, JPanel topPanel, DataLoader dataLoader) {
 
         // Top panel with the Back button
-        JButton backButton = new JButton("Back");
+        backButton = new JButton("Back");
         backButton.setPreferredSize(new Dimension(100, 50));
         backButton.setForeground(Color.WHITE);
         backButton.setBackground(MainMenu.PINK);
@@ -104,10 +115,35 @@ public class GeoQuiz extends JFrame {
         topPanel.add(backButton, BorderLayout.WEST); // Place the back button at the top left
 
         // Title
-        JLabel title = new JLabel("             Endless Japanese geography quiz");
+        JLabel title = new JLabel("          Japan geography");
         title.setForeground(Color.WHITE);
         title.setFont(new Font("Segoe UI", Font.BOLD, 24));
         topPanel.add(title, BorderLayout.CENTER);
+
+        // Top Subpanel for Timer, Timed and Reset
+        JPanel topSub = new JPanel();
+        topSub.setLayout(new GridLayout(1, 3));
+        topSub.setBackground(MainMenu.PINK);
+
+        //Timed mode
+        timerLabel = new JLabel("00:00", SwingConstants.CENTER);
+        timerLabel.setForeground(Color.WHITE);
+        timerLabel.setFont(new Font("Segoe UI", Font.BOLD, 24)); // Set the font
+        timerLabel.setVisible(false); // Hidden until Timed Mode starts
+        topSub.add(timerLabel); // Add timer at the top
+
+        // Add a new Timed button next to the Reset button
+        timedButton = new JButton("Timed");
+        timedButton.setForeground(Color.WHITE);
+        timedButton.setBackground(MainMenu.PINK);
+        timedButton.setFont(new Font("Segoe UI", Font.BOLD, 16));
+        timedButton.setBorderPainted(false);
+        timedButton.setContentAreaFilled(true);
+        timedButton.setFocusPainted(false); // Remove focus border on the button
+        timedButton.setPreferredSize(new Dimension(100, 50));
+        timedButton.addActionListener(e -> showTimedOptionsWindow());
+
+        topSub.add(timedButton);  // Add the button to your bottom panel
 
         // Add a Reset Progress button to reset the progress and history
         resetButton = new JButton("Reset");
@@ -129,10 +165,12 @@ public class GeoQuiz extends JFrame {
 
             // Check if the user confirmed the reset
             if (response == JOptionPane.YES_OPTION) {
-                resetProgress(progressTracker);  // Call the reset logic if confirmed
+                resetProgress();  // Call the reset logic if confirmed
             }
         }); // Call resetProgress method on click
-        topPanel.add(resetButton, BorderLayout.EAST); // Place Reset button at the top right
+
+        topSub.add(resetButton);
+        topPanel.add(topSub, BorderLayout.EAST); // Place Reset button at the top right
 
         mainPanel.add(topPanel, BorderLayout.NORTH);
 
@@ -415,7 +453,7 @@ public class GeoQuiz extends JFrame {
     }
 
     // Method to reset progress, clear history, and reset progress bars
-    private static void resetProgress(ProgressTracker progressTracker) {
+    private static void resetProgress() {
         // Reset progress variables in ProgressTracker
         progressTracker.resetProgress();
 
@@ -443,13 +481,13 @@ public class GeoQuiz extends JFrame {
         historyTextArea.setText("");  // Clear displayed history
 
         // Update status
-        statusLabel.setText("Reset successful.");
+        statusLabel.setText("Enter a town, city, prefecture, or train station.");
     }
 
-    // Method to save progress to a file
+    // Method to SAVE progress to a file
     private static void saveProgress() {
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(SAVE_FILE))) {
-            // Write each history entry to the save file
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(SAVE))) {
+            // Write each history entry to the SAVE file
             for (String entry : history) {
                 writer.write(entry);
                 writer.newLine();
@@ -459,10 +497,10 @@ public class GeoQuiz extends JFrame {
         }
     }
 
-    // Method to load progress from the save file
-    private static void loadProgress(ProgressTracker progressTracker) {
-        if (Files.exists(Paths.get(SAVE_FILE))) {
-            try (BufferedReader reader = new BufferedReader(new FileReader(SAVE_FILE))) {
+    // Method to load progress from the SAVE file
+    private static void loadProgress() {
+        if (Files.exists(Paths.get(SAVE))) {
+            try (BufferedReader reader = new BufferedReader(new FileReader(SAVE))) {
                 String line;
                 while ((line = reader.readLine()) != null) {
                     history.add(line);  // Add the entry to history
@@ -482,5 +520,210 @@ public class GeoQuiz extends JFrame {
                 System.out.println("Error loading progress: " + e.getMessage());
             }
         }
+    }
+
+    private void showTimedOptionsWindow() {
+        // Create a new JFrame for the options window
+        JFrame optionsWindow = new JFrame("Timed Mode Options");
+        optionsWindow.setSize(400, 300);
+        optionsWindow.setLayout(new GridLayout(5, 1));
+
+        // Title
+        JLabel title = new JLabel("Timed Mode", JLabel.CENTER);
+        title.setFont(new Font("Segoe UI", Font.BOLD, 16));
+        optionsWindow.add(title);
+
+        // Radio buttons
+        JRadioButton standardTimeButton = new JRadioButton("Standard time");
+        JRadioButton customTimeButton = new JRadioButton("Custom time");
+        ButtonGroup timeModeGroup = new ButtonGroup();
+        timeModeGroup.add(standardTimeButton);
+        timeModeGroup.add(customTimeButton);
+        optionsWindow.add(standardTimeButton);
+        optionsWindow.add(customTimeButton);
+
+        // Drop-down for standard times and high score display
+        String[] standardTimes = {"1:00", "3:00", "5:00", "10:00", "30:00", "1:00:00"};
+        JComboBox<String> timeDropdown = new JComboBox<>(standardTimes);
+        optionsWindow.add(timeDropdown);
+
+        // Display high scores next to each time from "geo_time_hs.txt"
+        // You'd load the high scores from file and display them in a JLabel next to the drop-down
+
+        // Custom time input
+        JTextField customTimeField = new JTextField("hh:mm:ss");
+        optionsWindow.add(customTimeField);
+
+        // Start button (enabled only when a valid option is selected)
+        JButton startButton = new JButton("Start");
+        startButton.setEnabled(false);  // Disabled until a valid time is selected
+        optionsWindow.add(startButton);
+
+        // Add Action Listeners for enabling the start button based on selection
+        standardTimeButton.addActionListener(e -> {
+            customTimeField.setEnabled(false);
+            timeDropdown.setEnabled(true);
+            startButton.setEnabled(true);  // Valid when any standard time is selected
+        });
+
+        customTimeButton.addActionListener(e -> {
+            customTimeField.setEnabled(true);
+            timeDropdown.setEnabled(false);
+            startButton.setEnabled(false);  // Remains disabled until valid custom time is entered
+        });
+
+        customTimeField.addActionListener(e -> {
+            if (isValidCustomTime(customTimeField.getText())) {
+                startButton.setEnabled(true);  // Enable start button if the input is valid
+            } else {
+                startButton.setEnabled(false);
+            }
+        });
+
+        startButton.addActionListener(e -> {
+            // Start the timed mode with either standard or custom time
+            if (standardTimeButton.isSelected()) {
+                timeframe = (String) timeDropdown.getSelectedItem();
+                startTimedMode(parseTimeToMilliseconds(timeframe));
+            } else if (customTimeButton.isSelected()) {
+                startTimedMode(parseTimeToMilliseconds(customTimeField.getText()));
+            }
+            optionsWindow.dispose();  // Close the options window
+        });
+
+        optionsWindow.setVisible(true);
+    }
+
+    // Helper function to validate custom time input
+    private boolean isValidCustomTime(String time) {
+        // Validate the custom time format (hh:mm:ss), hours should not exceed 24, and minutes/seconds shouldn't exceed 59
+        return time.matches("([01]?\\d|2[0-3]):[0-5]?\\d:[0-5]?\\d") || time.matches("[0-5]?\\d:[0-5]?\\d");
+    }
+
+    // Helper function to convert time (e.g., 1:00 or 1:00:00) to milliseconds
+    private long parseTimeToMilliseconds(String time) {
+        // Convert standard time format (mm:ss or hh:mm:ss) to milliseconds
+        String[] parts = time.split(":");
+        long milliseconds = 0;
+        if (parts.length == 2) {  // Format mm:ss
+            milliseconds += Integer.parseInt(parts[0]) * 60000;  // minutes to ms
+            milliseconds += Integer.parseInt(parts[1]) * 1000;   // seconds to ms
+        } else if (parts.length == 3) {  // Format hh:mm:ss
+            milliseconds += Integer.parseInt(parts[0]) * 3600000; // hours to ms
+            milliseconds += Integer.parseInt(parts[1]) * 60000;   // minutes to ms
+            milliseconds += Integer.parseInt(parts[2]) * 1000;    // seconds to ms
+        }
+        return milliseconds;
+    }
+
+    private void startTimedMode(long timeInMillis) {
+        // Load the quiz with the temporary SAVE file
+        loadQuizTimed();
+
+        // Start the countdown timer
+        startTimedModeTimer(timeInMillis / 1000);
+
+        // Hide the "Back" and "Timed" buttons, and replace "Reset" with "End"
+        backButton.setVisible(false);
+        timedButton.setVisible(false);
+        resetButton.setText("End");
+        resetButton.removeActionListener(resetButton.getActionListeners()[0]);
+        resetButton.addActionListener(e -> {
+            int confirmation = JOptionPane.showConfirmDialog(null, "Are you sure you want to end the timed run early?");
+            if (confirmation == JOptionPane.YES_OPTION) {
+                countdownTimer.stop();
+                showTimedScore();  // Show the score if the user ends the run early
+            }
+        });
+    }
+
+    // Function to load quiz data with the SAVE file
+    private void loadQuizTimed() {
+        saveProgress();
+        resetProgress();
+    }
+
+    // Function to show score after timed mode ends
+    private void showTimedScore() {
+        int score = calculateScore();  // Calculate the score based on progress
+        String timeFrame = timeframe;  // Get the selected time frame
+
+        // Display the score and a close button
+        JFrame scoreWindow = new JFrame("Timed Mode Results");
+        scoreWindow.setSize(300, 150);
+        scoreWindow.setLayout(new BorderLayout());
+
+        JLabel scoreLabel = new JLabel("Score: " + score + " | Time: " + timeFrame, JLabel.CENTER);
+        scoreWindow.add(scoreLabel, BorderLayout.CENTER);
+
+        JButton closeButton = new JButton("Close");
+        closeButton.addActionListener(e -> {
+            scoreWindow.dispose();
+            resetToNormalMode();  // Reset to the normal interface
+        });
+        scoreWindow.add(closeButton, BorderLayout.SOUTH);
+
+        scoreWindow.setVisible(true);
+    }
+
+    // Function to calculate score based on progress
+    private int calculateScore() {
+        // Add up the number of named items from each category
+        return progressTracker.getCityProgress() + progressTracker.getPrefectureProgress() + progressTracker.getStationProgress();
+    }
+
+    // Reset the interface back to the normal mode after the timed mode ends
+    private void resetToNormalMode() {
+        backButton.setVisible(true);
+        timedButton.setVisible(true);
+        timerLabel.setVisible(false);
+        resetButton.setText("Reset");
+        resetButton.removeActionListener(resetButton.getActionListeners()[0]);  // Remove the "End" button listener
+        resetButton.addActionListener(e -> {
+            int response = JOptionPane.showConfirmDialog(
+                    null,
+                    "Are you sure you want to reset your progress?",
+                    "Confirm Reset",
+                    JOptionPane.YES_NO_OPTION,
+                    JOptionPane.WARNING_MESSAGE
+            );
+
+            // Check if the user confirmed the reset
+            if (response == JOptionPane.YES_OPTION) {
+                resetProgress();  // Call the reset logic if confirmed
+            }
+        }); // Call resetProgress method on click
+        resetProgress();
+        loadProgress();
+    }
+    private void startTimedModeTimer(long timeInSeconds) {
+        timeRemaining = timeInSeconds;
+
+        // Show the timer label when the quiz starts
+        timerLabel.setVisible(true);
+
+        // Initialize and start the countdown timer
+        countdownTimer = new Timer(1000, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                updateTimerLabel();
+
+                if (timeRemaining < 0) {
+                    countdownTimer.stop();
+                    showTimedScore(); // Show results when time's up
+                }
+            }
+        });
+
+        countdownTimer.start(); // Start the timer
+    }
+
+    // Update the timer label (mm:ss format)
+    private void updateTimerLabel() {
+        long hours = timeRemaining / 3600;
+        long minutes = timeRemaining / 60 - hours * 60;
+        long seconds = timeRemaining % 60;
+        timerLabel.setText(String.format("%02d:%02d:%02d", hours, minutes, seconds));
+        timeRemaining--;
     }
 }
