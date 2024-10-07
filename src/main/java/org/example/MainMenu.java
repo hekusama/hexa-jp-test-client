@@ -6,6 +6,9 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 public class MainMenu extends JFrame {
 
@@ -177,6 +180,13 @@ public class MainMenu extends JFrame {
     }
 
     public static void main(String[] args) {
+        Path appDir = Paths.get(System.getenv("LOCALAPPDATA"), "hexa", "Subfolder1", "Subfolder2");
+        try {
+            Files.createDirectories(appDir);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         SwingUtilities.invokeLater(() -> {
             MainMenu mainMenu = new MainMenu();
             mainMenu.setVisible(true);

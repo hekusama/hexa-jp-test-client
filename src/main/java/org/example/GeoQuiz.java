@@ -1,7 +1,5 @@
 package org.example;
 
-import com.sun.tools.javac.Main;
-
 import javax.swing.*;
 import javax.swing.border.LineBorder;
 import java.awt.*;
