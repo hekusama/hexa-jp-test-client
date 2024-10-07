@@ -669,7 +669,7 @@ public class GeoQuiz extends JFrame {
     // Function to calculate score based on progress
     private int calculateScore() {
         // Add up the number of named items from each category
-        return progressTracker.getCityProgress() + progressTracker.getPrefectureProgress() + progressTracker.getStationProgress();
+        return progressTracker.getTownProgress() + progressTracker.getCityProgress() + progressTracker.getPrefectureProgress() + progressTracker.getStationProgress();
     }
 
     // Reset the interface back to the normal mode after the timed mode ends
