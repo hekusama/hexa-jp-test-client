@@ -12,21 +12,6 @@ import java.nio.file.Paths;
 
 public class MainMenu extends JFrame {
 
-    // Pastel Colors
-    public static final Color P_RED = new Color(255,179,186);
-    public static final Color P_YELLOW = new Color(255,255,186);
-    public static final Color P_GREEN = new Color(186,255,201);
-    public static final Color P_BLUE = new Color(186,225,255);
-    public static final Color P_PURPLE = new Color(225,186,255);
-
-    // Theme Colors
-    public static final Color LIGHT_PINK = new Color(255, 199, 206);
-    public static final Color PINK = new Color(255, 179, 186);
-    public static final Color GRAY = new Color(55, 53, 63);
-    public static final Color DARK_GRAY = new Color(35, 33, 43);
-    public static final Color LIGHT_GRAY = new Color(95, 93, 103);
-    public static final Color LIGHTER_GRAY = new Color(165, 163, 173);
-
     private int mouseX, mouseY;
     public static final String VERSION = "0.0.1";
 
@@ -41,13 +26,13 @@ public class MainMenu extends JFrame {
         // GeoQuiz panel
         JPanel mainPanel = new JPanel();
         mainPanel.setLayout(new BorderLayout());
-        mainPanel.setBackground(GRAY);
+        mainPanel.setBackground(Palette.GRAY);
 
         // Top bar with title and icon
         JPanel topBar = new JPanel();
         topBar.setLayout(new BorderLayout());
         topBar.setPreferredSize(new Dimension(800, 80));  // Set preferred size for the top bar
-        topBar.setBackground(PINK);
+        topBar.setBackground(Palette.PINK);
         JLabel titleLabel = new JLabel("    Hexa JP test client");
         titleLabel.setFont(new Font("Segoe UI", Font.BOLD, 48));
         titleLabel.setForeground(Color.WHITE);
@@ -65,7 +50,7 @@ public class MainMenu extends JFrame {
         // Buttons panel
         JPanel buttonsPanel = new JPanel();
         buttonsPanel.setLayout(new GridLayout(1, 2));
-        buttonsPanel.setBackground(GRAY);
+        buttonsPanel.setBackground(Palette.GRAY);
 
         // Geography quiz button (with image)
         Image geoImageLoad = ImageLoader.loadImage("geo_button_image.png");
@@ -141,7 +126,7 @@ public class MainMenu extends JFrame {
         JButton exitButton = new JButton("Exit");
         exitButton.setPreferredSize(new Dimension(100, 50));
         exitButton.setForeground(Color.WHITE);
-        exitButton.setBackground(LIGHT_GRAY);
+        exitButton.setBackground(Palette.LIGHT_GRAY);
         exitButton.setFont(new Font("Segoe UI", Font.BOLD, 16));
         exitButton.setBorderPainted(false);
         exitButton.setContentAreaFilled(false);
@@ -154,7 +139,7 @@ public class MainMenu extends JFrame {
         });
 
         JPanel bottomPanel = new JPanel(new BorderLayout());
-        bottomPanel.setBackground(DARK_GRAY);
+        bottomPanel.setBackground(Palette.DARK_GRAY);
         bottomPanel.add(exitButton, BorderLayout.EAST);
 
         // Bottom note
@@ -162,7 +147,7 @@ public class MainMenu extends JFrame {
                 "Version: hexaclient v" + VERSION + "<br>" +
                 "Host: JLink OpenJDK 23<br>" +
                 "Ⓡ 2024</blockquote></html>");
-        note.setForeground(LIGHTER_GRAY);
+        note.setForeground(Palette.LIGHTER_GRAY);
         bottomPanel.add(note, BorderLayout.WEST);
 
         mainPanel.add(bottomPanel, BorderLayout.SOUTH);

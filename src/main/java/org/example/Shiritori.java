@@ -22,10 +22,10 @@ public class Shiritori extends JFrame {
 
         JPanel mainPanel = new JPanel();
         mainPanel.setLayout(new BorderLayout());
-        mainPanel.setBackground(MainMenu.GRAY);
+        mainPanel.setBackground(Palette.GRAY);
 
         JPanel topPanel = new JPanel(new BorderLayout());
-        topPanel.setBackground(MainMenu.PINK);
+        topPanel.setBackground(Palette.PINK);
 
         // Setup UI mainPanel
         setupUI(mainPanel, topPanel);
@@ -39,7 +39,7 @@ public class Shiritori extends JFrame {
         JButton backButton = new JButton("Back");
         backButton.setPreferredSize(new Dimension(100, 50));
         backButton.setForeground(Color.WHITE);
-        backButton.setBackground(MainMenu.PINK);
+        backButton.setBackground(Palette.PINK);
         backButton.setFont(new Font("Segoe UI", Font.BOLD, 16));
         backButton.setBorderPainted(false);
         backButton.setContentAreaFilled(true);

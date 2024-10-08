@@ -11,14 +11,14 @@ public class CustomTitleBar extends JPanel{
 
     public CustomTitleBar(JFrame frame) {
 
-        setBackground(MainMenu.LIGHT_PINK);
+        setBackground(Palette.LIGHT_PINK);
         setLayout(new BorderLayout());
 
         // Create a minimize button
         JButton minimizeButton = new JButton("_");
         minimizeButton.setPreferredSize(new Dimension(30, 30));
         minimizeButton.setFocusable(false);
-        minimizeButton.setBackground(MainMenu.LIGHT_PINK);
+        minimizeButton.setBackground(Palette.LIGHT_PINK);
         minimizeButton.setForeground(Color.WHITE);
         minimizeButton.setBorderPainted(false);
         minimizeButton.setContentAreaFilled(false);
