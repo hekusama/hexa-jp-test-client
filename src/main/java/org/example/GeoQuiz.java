@@ -4,8 +4,7 @@ import javax.swing.*;
 import javax.swing.Timer;
 import javax.swing.border.LineBorder;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 import java.io.*;
 import java.util.*;
 import java.nio.file.Files;
@@ -13,6 +12,20 @@ import java.nio.file.Paths;
 import java.util.List;
 
 public class GeoQuiz extends JFrame {
+
+    //Window dimming
+    // Create the dimming panel
+    private static JPanel dimmingPanel = new JPanel() {
+        @Override
+        protected void paintComponent(Graphics g) {
+            super.paintComponent(g);
+            Graphics2D g2d = (Graphics2D) g;
+            g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.5f)); // 50% opacity
+            g2d.setColor(Color.BLACK);  // Black color for dimming
+            g2d.fillRect(0, 0, getWidth(), getHeight());
+        }
+    };
+    private JPanel glassPane = (JPanel) getGlassPane();
 
     private static JProgressBar cityProgressBar;
     private static JProgressBar prefectureProgressBar;
@@ -59,7 +72,20 @@ public class GeoQuiz extends JFrame {
 
         setUndecorated(true);
         setSize(800, 640);
+        setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        //Setup dimming panel
+        // Add a MouseAdapter to consume all mouse events and prevent interaction
+        glassPane.addMouseListener(new MouseAdapter() {});
+        glassPane.addMouseMotionListener(new MouseAdapter() {});
+        glassPane.addKeyListener(new KeyAdapter() {});
+
+        dimmingPanel.setOpaque(false);
+        glassPane.setVisible(false);
+        glassPane.setOpaque(false);  // Make it non-opaque to allow the dimming effect
+        glassPane.setLayout(new BorderLayout());  // Set a layout manager
+        glassPane.add(dimmingPanel);
 
         // Add the title bar to the frame
         add(new CustomTitleBar(this), BorderLayout.NORTH);
@@ -107,7 +133,6 @@ public class GeoQuiz extends JFrame {
         backButton.setBackground(Palette.PINK);
         backButton.setFont(new Font("Segoe UI", Font.BOLD, 16));
         backButton.setBorderPainted(false);
-        backButton.setContentAreaFilled(true);
         backButton.setFocusPainted(false); // Remove focus border on the button
         backButton.addActionListener(e -> {
             saveProgress();
@@ -140,7 +165,6 @@ public class GeoQuiz extends JFrame {
         timedButton.setBackground(Palette.PINK);
         timedButton.setFont(new Font("Segoe UI", Font.BOLD, 16));
         timedButton.setBorderPainted(false);
-        timedButton.setContentAreaFilled(true);
         timedButton.setFocusPainted(false); // Remove focus border on the button
         timedButton.setPreferredSize(new Dimension(100, 50));
         timedButton.addActionListener(e -> showTimedOptionsWindow());
@@ -529,9 +553,20 @@ public class GeoQuiz extends JFrame {
         JFrame optionsWindow = new JFrame("Timed Mode Options");
         optionsWindow.setSize(400, 400);
         optionsWindow.setUndecorated(true);
+        optionsWindow.setLocationRelativeTo(null);
+
+        // MainFrame dimming
+        glassPane.setVisible(true);
+        // Add WindowListener to detect when the frame is disposed
+        optionsWindow.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosed(WindowEvent e) {
+                glassPane.setVisible(false);
+            }
+        });
 
         // Add the title bar to the frame
-        optionsWindow.add(new CustomTitleBar(optionsWindow), BorderLayout.NORTH);
+        optionsWindow.add(new CustomTitleBar(optionsWindow, true), BorderLayout.NORTH);
 
         // Panel layouts
         JPanel titlePanel = new JPanel(new BorderLayout());
@@ -784,8 +819,19 @@ public class GeoQuiz extends JFrame {
         scoreWindow.setSize(400, 300);
         scoreWindow.setLayout(new BorderLayout());
         scoreWindow.setUndecorated(true);
+        scoreWindow.setLocationRelativeTo(null);
 
         scoreWindow.add(new CustomTitleBar(scoreWindow), BorderLayout.NORTH);
+
+        // MainFrame dimming
+        glassPane.setVisible(true);
+        // Add WindowListener to detect when the frame is disposed
+        scoreWindow.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosed(WindowEvent e) {
+                glassPane.setVisible(false);
+            }
+        });
 
         JPanel innerPanel = new JPanel(new BorderLayout());
 

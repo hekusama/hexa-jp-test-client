@@ -18,6 +18,8 @@ public class MainMenu extends JFrame {
         setSize(1600, 900);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setUndecorated(true);
+        setLocationRelativeTo(null);
+        UIManager.put("Button.select", Palette.D_RED);
 
         // Add the title bar to the frame
         add(new CustomTitleBar(this), BorderLayout.NORTH);

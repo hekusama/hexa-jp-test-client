@@ -17,4 +17,7 @@ public class Palette {
     public static final Color DARK_GRAY = new Color(35, 33, 43);
     public static final Color LIGHT_GRAY = new Color(95, 93, 103);
     public static final Color LIGHTER_GRAY = new Color(165, 163, 173);
+
+    // Other
+    public static final Color D_RED = new Color(255,159,166);
 }
