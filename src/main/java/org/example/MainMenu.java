@@ -12,7 +12,6 @@ import java.nio.file.Paths;
 
 public class MainMenu extends JFrame {
 
-    private int mouseX, mouseY;
     public static final String VERSION = "0.0.1";
 
     public MainMenu() {
@@ -33,7 +32,7 @@ public class MainMenu extends JFrame {
         topBar.setLayout(new BorderLayout());
         topBar.setPreferredSize(new Dimension(800, 80));  // Set preferred size for the top bar
         topBar.setBackground(Palette.PINK);
-        JLabel titleLabel = new JLabel("    Hexa JP test client");
+        JLabel titleLabel = new JLabel("    Hexa's test client");
         titleLabel.setFont(new Font("Segoe UI", Font.BOLD, 48));
         titleLabel.setForeground(Color.WHITE);
         topBar.add(titleLabel, BorderLayout.WEST);

@@ -1,17 +1,16 @@
 package org.example;
 
 import javax.swing.*;
+import javax.swing.Timer;
 import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.*;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-import java.util.ArrayList;
+import java.util.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.List;
 
 public class GeoQuiz extends JFrame {
 
@@ -50,6 +49,9 @@ public class GeoQuiz extends JFrame {
 
     private JFrame parent; // Reference to MainMenu
     private static final String SAVE = "geo_save.txt";  // Save file location
+    private static final File HS = new File("geo_hs.txt");  // Highscore file location
+
+    private static ArrayList<Integer> hsArray;
 
     public GeoQuiz(JFrame parentFrame) {
 
@@ -525,39 +527,160 @@ public class GeoQuiz extends JFrame {
     private void showTimedOptionsWindow() {
         // Create a new JFrame for the options window
         JFrame optionsWindow = new JFrame("Timed Mode Options");
-        optionsWindow.setSize(400, 300);
-        optionsWindow.setLayout(new GridLayout(5, 1));
+        optionsWindow.setSize(400, 400);
+        optionsWindow.setUndecorated(true);
+
+        // Add the title bar to the frame
+        optionsWindow.add(new CustomTitleBar(optionsWindow), BorderLayout.NORTH);
+
+        // Panel layouts
+        JPanel titlePanel = new JPanel(new BorderLayout());
+        JPanel titleBase = new JPanel();
+        JPanel startBase = new JPanel();
+        JPanel timeOptions = new JPanel(new GridLayout(1, 2));
+        JPanel t1 = new JPanel(new FlowLayout(FlowLayout.CENTER));
+        JPanel t2 = new JPanel();
+        t2.setLayout(new BoxLayout(t2, BoxLayout.Y_AXIS));
 
         // Title
         JLabel title = new JLabel("Timed Mode", JLabel.CENTER);
-        title.setFont(new Font("Segoe UI", Font.BOLD, 16));
-        optionsWindow.add(title);
+        title.setFont(new Font("Segoe UI", Font.BOLD, 30));
+        title.setForeground(Color.WHITE);
+        titleBase.setBackground(Palette.PINK);
+        titleBase.add(title);
+        titlePanel.add(titleBase, BorderLayout.NORTH);
 
         // Radio buttons
         JRadioButton standardTimeButton = new JRadioButton("Standard time");
         JRadioButton customTimeButton = new JRadioButton("Custom time");
+        standardTimeButton.setForeground(Color.WHITE);
+        customTimeButton.setForeground(Color.WHITE);
+        standardTimeButton.setBackground(Palette.GRAY);
+        customTimeButton.setBackground(Palette.GRAY);
+        standardTimeButton.setFocusPainted(false);
+        customTimeButton.setFocusPainted(false);
+
         ButtonGroup timeModeGroup = new ButtonGroup();
         timeModeGroup.add(standardTimeButton);
         timeModeGroup.add(customTimeButton);
-        optionsWindow.add(standardTimeButton);
-        optionsWindow.add(customTimeButton);
+        standardTimeButton.setPreferredSize(new Dimension(150, 30));
+        customTimeButton.setPreferredSize(new Dimension(150, 30));
+        t1.add(standardTimeButton);
 
         // Drop-down for standard times and high score display
         String[] standardTimes = {"1:00", "3:00", "5:00", "10:00", "30:00", "1:00:00"};
         JComboBox<String> timeDropdown = new JComboBox<>(standardTimes);
-        optionsWindow.add(timeDropdown);
+        timeDropdown.setPreferredSize(new Dimension(150, 30));
+        timeDropdown.setForeground(Color.WHITE);
+        timeDropdown.setBackground(Palette.LIGHTER_GRAY);
+        timeDropdown.setBorder(new LineBorder(Palette.LIGHT_GRAY, 2));
+        t1.add(timeDropdown);
 
-        // Display high scores next to each time from "geo_time_hs.txt"
-        // You'd load the high scores from file and display them in a JLabel next to the drop-down
+        // Add custom time button after
+        t1.add(customTimeButton);
 
         // Custom time input
         JTextField customTimeField = new JTextField("hh:mm:ss");
-        optionsWindow.add(customTimeField);
+        customTimeField.setPreferredSize(new Dimension(150, 30));
+        customTimeField.setForeground(Color.WHITE);
+        customTimeField.setBackground(Palette.LIGHTER_GRAY);
+        customTimeField.setBorder(new LineBorder(Palette.LIGHT_GRAY, 2));
+        t1.add(customTimeField);
+
+        // Highscores
+        String hsFormat = "";
+        boolean error = false;
+        if (HS.exists() && !FileUtil.isFileEmpty(HS)) {
+            String highscores = Encryptor.readEncryptedData(HS);
+            hsArray = new ArrayList<>();
+            int index = 0;
+            while (index < highscores.length()) {
+                int nextSpace = highscores.indexOf(' ', index);
+                if (nextSpace == -1) {  // No more spaces, read until the end of the string
+                    nextSpace = highscores.length();
+                }
+                try {
+                    // Parse the integer score between current index and next space
+                    hsArray.add(Integer.parseInt(highscores.substring(index, nextSpace)));
+                    // Update index to move past the current score
+                    index = nextSpace + 1;
+                } catch (NumberFormatException e) {
+                    hsFormat = "<html>Error: Cannot read<br>" + HS + "</html>";
+                    error = true;
+                    break;
+                }
+            }
+            if (!error) {
+                hsFormat = "<html>";
+                int max = 0;
+                for (int i = 0; i < hsArray.size(); i++) {
+                    switch (i) {
+                        case 0:
+                            hsFormat += "1 min: ";
+                            break;
+                        case 1:
+                            hsFormat += "3 min: ";
+                            break;
+                        case 2:
+                            hsFormat += "5 min: ";
+                            break;
+                        case 3:
+                            hsFormat += "10 min: ";
+                            break;
+                        case 4:
+                            hsFormat += "30 min: ";
+                            break;
+                        case 5:
+                            hsFormat += "1 hour: ";
+                            break;
+                    }
+                    hsFormat += hsArray.get(i) + "<br>";
+                    if (hsArray.get(i) > max)
+                        max = hsArray.get(i);
+                }
+                hsFormat += "Max: " + max + "</html>";
+            }
+        } else {
+            if (!HS.exists()) {
+                try {
+                    HS.createNewFile();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+            hsFormat = "<html>1 min: 0<br>" +
+                    "3 min: 0<br>" +
+                    "5 min: 0<br>" +
+                    "10 min: 0<br>" +
+                    "30 min: 0<br>" +
+                    "1 hour: 0<br>" +
+                    "Max: 0</html>";
+        }
+        JLabel hsTitle = new JLabel("Highscores: ");
+        hsTitle.setForeground(Color.WHITE);
+        hsTitle.setFont(new Font("Segoe UI", Font.BOLD, 24));
+
+        JLabel hsLabel = new JLabel(hsFormat);
+        hsLabel.setForeground(Color.WHITE);
+        hsLabel.setFont(new Font("Segoe UI", Font.BOLD, 16));
+
+        t2.add(hsTitle);
+        t2.add(hsLabel);
 
         // Start button (enabled only when a valid option is selected)
         JButton startButton = new JButton("Start");
         startButton.setEnabled(false);  // Disabled until a valid time is selected
-        optionsWindow.add(startButton);
+        startButton.setPreferredSize(new Dimension(150, 40));
+        startButton.setForeground(Color.WHITE);
+        startButton.setBackground(Palette.DARK_GRAY);
+        startButton.setFont(new Font("Segoe UI", Font.BOLD, 24));
+        startButton.setFocusPainted(false);
+        startButton.setBorderPainted(false);
+
+        startBase.setBackground(Palette.DARK_GRAY);
+
+        startBase.add(startButton);
+        titlePanel.add(startBase, BorderLayout.SOUTH);
 
         // Add Action Listeners for enabling the start button based on selection
         standardTimeButton.addActionListener(e -> {
@@ -587,10 +710,19 @@ public class GeoQuiz extends JFrame {
                 startTimedMode(parseTimeToMilliseconds(timeframe));
             } else if (customTimeButton.isSelected()) {
                 startTimedMode(parseTimeToMilliseconds(customTimeField.getText()));
+                timeframe = customTimeField.getText();
             }
             optionsWindow.dispose();  // Close the options window
         });
 
+        t1.setBackground(Palette.GRAY);
+        t2.setBackground(Palette.GRAY);
+
+        timeOptions.add(t1);
+        timeOptions.add(t2);
+
+        titlePanel.add(timeOptions);
+        optionsWindow.add(titlePanel);
         optionsWindow.setVisible(true);
     }
 
@@ -646,24 +778,108 @@ public class GeoQuiz extends JFrame {
     // Function to show score after timed mode ends
     private void showTimedScore() {
         int score = calculateScore();  // Calculate the score based on progress
-        String timeFrame = timeframe;  // Get the selected time frame
 
         // Display the score and a close button
         JFrame scoreWindow = new JFrame("Timed Mode Results");
-        scoreWindow.setSize(300, 150);
+        scoreWindow.setSize(400, 300);
         scoreWindow.setLayout(new BorderLayout());
+        scoreWindow.setUndecorated(true);
 
-        JLabel scoreLabel = new JLabel("Score: " + score + " | Time: " + timeFrame, JLabel.CENTER);
-        scoreWindow.add(scoreLabel, BorderLayout.CENTER);
+        scoreWindow.add(new CustomTitleBar(scoreWindow), BorderLayout.NORTH);
 
+        JPanel innerPanel = new JPanel(new BorderLayout());
+
+        // Title
+        JPanel titleBase = new JPanel();
+        titleBase.setBackground(Palette.PINK);
+        JLabel title = new JLabel("Results");
+        title.setFont(new Font("Segoe UI", Font.BOLD, 48));
+        title.setForeground(Color.WHITE);
+        titleBase.add(title);
+        innerPanel.add(titleBase, BorderLayout.NORTH);
+
+        // Show highscore
+        int highscore = 0;
+        if (hsArray != null) {
+            highscore = switch (timeframe) {
+                case "01:00", "1:00" -> hsArray.get(0);
+                case "03:00", "3:00" -> hsArray.get(1);
+                case "05:00", "5:00" -> hsArray.get(2);
+                case "10:00" -> hsArray.get(3);
+                case "30:00" -> hsArray.get(4);
+                case "01:00:00", "1:00:00" -> hsArray.get(5);
+                default -> 0;
+            };
+        }
+
+        JPanel scoreBase = new JPanel();
+        scoreBase.setBackground(Palette.GRAY);
+        JLabel scoreLabel = new JLabel("<html>Score: " + score + "<br> Time: " + timeframe + "<br>Highscore: " + highscore + "</html>", JLabel.CENTER);
+        scoreLabel.setForeground(Color.WHITE);
+        scoreLabel.setFont(new Font("Segoe UI", Font.BOLD, 24));
+
+        scoreBase.add(scoreLabel);
+        innerPanel.add(scoreBase);
+        scoreWindow.add(innerPanel);
+
+        JPanel closeBase = new JPanel();
+        closeBase.setBackground(Palette.DARK_GRAY);
         JButton closeButton = new JButton("Close");
+        closeButton.setFont(new Font("Segoe UI", Font.BOLD, 24));
+        closeButton.setPreferredSize(new Dimension(150, 60));
+        closeButton.setForeground(Color.WHITE);
+        closeButton.setBackground(Palette.DARK_GRAY);
+        closeButton.setBorderPainted(false);
+        closeButton.setFocusPainted(false);
         closeButton.addActionListener(e -> {
             scoreWindow.dispose();
             resetToNormalMode();  // Reset to the normal interface
         });
-        scoreWindow.add(closeButton, BorderLayout.SOUTH);
+        closeBase.add(closeButton);
+        scoreWindow.add(closeBase, BorderLayout.SOUTH);
 
         scoreWindow.setVisible(true);
+
+        // Store highscore
+        if (hsArray == null) {
+            hsArray = new ArrayList<>();
+            for (int i = 0; i < 6; i++) {
+                hsArray.add(0);
+            }
+        }
+        switch (timeframe) {
+            case "01:00", "1:00":
+                if (score > hsArray.get(0))
+                    hsArray.set(0, score);
+                break;
+            case "03:00", "3:00":
+                if (score > hsArray.get(1))
+                    hsArray.set(1, score);
+                break;
+            case "05:00", "5:00":
+                if (score > hsArray.get(2))
+                    hsArray.set(2, score);
+                break;
+            case "10:00":
+                if (score > hsArray.get(3))
+                    hsArray.set(3, score);
+                break;
+            case "30:00":
+                if (score > hsArray.get(4))
+                    hsArray.set(4, score);
+                break;
+            case "01:00:00", "1:00:00":
+                if (score > hsArray.get(5))
+                    hsArray.set(5, score);
+                break;
+            default:
+                break;
+        }
+        String hsList = "";
+        for (int i : hsArray) {
+            hsList += i + " ";
+        }
+        Encryptor.writeEncryptedData(HS, hsList);
     }
 
     // Function to calculate score based on progress
