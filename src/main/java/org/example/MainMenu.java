@@ -20,6 +20,9 @@ public class MainMenu extends JFrame {
         setUndecorated(true);
         setLocationRelativeTo(null);
         UIManager.put("Button.select", Palette.D_RED);
+        
+        // init Encryptor key
+        new Encryptor();
 
         // Add the title bar to the frame
         add(new CustomTitleBar(this), BorderLayout.NORTH);

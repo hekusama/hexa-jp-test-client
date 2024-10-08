@@ -5,10 +5,23 @@ import java.nio.charset.StandardCharsets;
 
 public class Encryptor {
 
-    private static final String key = "Tenma";
+    private static String key;
+
+    public Encryptor() {
+        // init key
+        InputStream inputStream = getClass().getClassLoader().getResourceAsStream("secret.txt");
+        InputStreamReader inputReader = new InputStreamReader(inputStream, StandardCharsets.UTF_8);
+        BufferedReader reader = new BufferedReader(inputReader);
+        try {
+            key = reader.readLine();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
     // Method to encrypt a string using XOR
     public static String xorEncrypt(String input) {
+
         char[] keyChars = key.toCharArray();
         char[] inputChars = input.toCharArray();
         char[] encryptedChars = new char[input.length()];
