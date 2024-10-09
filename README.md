@@ -13,6 +13,7 @@ Test client for Japanese related applications.
 - This is the ultimate Japanese geography quiz with every prefecture, city, town and (almost) all stations! See [Included Railways](railwaysIncluded.md)
 - Saves automatically (DO NOT tamper with the save file. It might behave weirdly if you edit the save.)
 - There's a reset button if you want to reset your save. (or just delete the old `geo_save.txt`)
+
 `v0.0.1`
 - Timed mode!
 - Now you can flex how fast you can type/how much you can remember in a short time!

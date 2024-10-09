@@ -31,6 +31,8 @@
 - Hankai Line
 ### Shizuoka
 - Oigawa Railway
+### Toyama
+- Ainokaze Toyama Railway
 ### Yamanashi
 - Fuji-Kyūkō Line
 
