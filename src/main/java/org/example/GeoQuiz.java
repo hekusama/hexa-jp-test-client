@@ -181,18 +181,7 @@ public class GeoQuiz extends JFrame {
         resetButton.setContentAreaFilled(true);
         resetButton.setFocusPainted(false); // Remove focus border on the button
         resetButton.addActionListener(e -> {
-            int response = JOptionPane.showConfirmDialog(
-                    null,
-                    "Are you sure you want to reset your progress?",
-                    "Confirm Reset",
-                    JOptionPane.YES_NO_OPTION,
-                    JOptionPane.WARNING_MESSAGE
-            );
-
-            // Check if the user confirmed the reset
-            if (response == JOptionPane.YES_OPTION) {
-                resetProgress();  // Call the reset logic if confirmed
-            }
+            confirm(0);
         }); // Call resetProgress method on click
 
         topSub.add(resetButton);
@@ -478,6 +467,89 @@ public class GeoQuiz extends JFrame {
         historyTextArea.setText(filteredHistory.toString());
     }
 
+    /**
+     * Confirmation window
+     * 0 = reset
+     * 1 = end timed run
+     */
+    private void confirm(int type) {
+        JFrame confirmWindow = new JFrame();
+        confirmWindow.setSize(300, 180);
+        confirmWindow.setUndecorated(true);
+        confirmWindow.setLocationRelativeTo(null);
+
+        // MainFrame dimming
+        glassPane.setVisible(true);
+        // Add WindowListener to detect when the frame is disposed
+        confirmWindow.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosed(WindowEvent e) {
+                glassPane.setVisible(false);
+            }
+        });
+
+        // Add the title bar to the frame
+        confirmWindow.add(new CustomTitleBar(confirmWindow, true), BorderLayout.NORTH);
+
+        // Title
+        JPanel titleBase = new JPanel();
+        titleBase.setBackground(Palette.PINK);
+        JLabel title = new JLabel();
+        title.setFont(new Font("Segoe UI", Font.BOLD, 48));
+        title.setForeground(Color.WHITE);
+
+        if (type == 0) {
+            title.setText("Reset?");
+        } else if (type == 1) {
+            title.setText("End run?");
+        }
+
+        titleBase.add(title);
+
+        confirmWindow.add(titleBase);
+
+        JPanel optionBase = new JPanel(new GridLayout(1, 2));
+        optionBase.setBackground(Palette.DARK_GRAY);
+
+        JButton yesButton = new JButton("Yes");
+        yesButton.setFont(new Font("Segoe UI", Font.BOLD, 24));
+        yesButton.setPreferredSize(new Dimension(150, 60));
+        yesButton.setForeground(Color.WHITE);
+        yesButton.setBackground(Palette.DARK_GRAY);
+        yesButton.setBorderPainted(false);
+        yesButton.setFocusPainted(false);
+
+        if (type == 0) {
+            yesButton.addActionListener(e -> {
+                resetProgress();
+                confirmWindow.dispose();
+            });
+        } else if (type == 1) {
+            yesButton.addActionListener(e -> {
+                countdownTimer.stop();
+                confirmWindow.dispose();
+                showTimedScore();
+            });
+        }
+
+        optionBase.add(yesButton);
+
+        JButton noButton = new JButton("No");
+        noButton.setFont(new Font("Segoe UI", Font.BOLD, 24));
+        noButton.setPreferredSize(new Dimension(150, 60));
+        noButton.setForeground(Color.WHITE);
+        noButton.setBackground(Palette.DARK_GRAY);
+        noButton.setBorderPainted(false);
+        noButton.setFocusPainted(false);
+        noButton.addActionListener(e -> {
+            confirmWindow.dispose();
+        });
+        optionBase.add(noButton);
+        confirmWindow.add(optionBase, BorderLayout.SOUTH);
+
+        confirmWindow.setVisible(true);
+    }
+
     // Method to reset progress, clear history, and reset progress bars
     private static void resetProgress() {
         // Reset progress variables in ProgressTracker
@@ -550,7 +622,7 @@ public class GeoQuiz extends JFrame {
 
     private void showTimedOptionsWindow() {
         // Create a new JFrame for the options window
-        JFrame optionsWindow = new JFrame("Timed Mode Options");
+        JFrame optionsWindow = new JFrame();
         optionsWindow.setSize(400, 400);
         optionsWindow.setUndecorated(true);
         optionsWindow.setLocationRelativeTo(null);
@@ -796,11 +868,7 @@ public class GeoQuiz extends JFrame {
         resetButton.setText("End");
         resetButton.removeActionListener(resetButton.getActionListeners()[0]);
         resetButton.addActionListener(e -> {
-            int confirmation = JOptionPane.showConfirmDialog(null, "Are you sure you want to end the timed run early?");
-            if (confirmation == JOptionPane.YES_OPTION) {
-                countdownTimer.stop();
-                showTimedScore();  // Show the score if the user ends the run early
-            }
+            confirm(1);
         });
     }
 
@@ -942,18 +1010,7 @@ public class GeoQuiz extends JFrame {
         resetButton.setText("Reset");
         resetButton.removeActionListener(resetButton.getActionListeners()[0]);  // Remove the "End" button listener
         resetButton.addActionListener(e -> {
-            int response = JOptionPane.showConfirmDialog(
-                    null,
-                    "Are you sure you want to reset your progress?",
-                    "Confirm Reset",
-                    JOptionPane.YES_NO_OPTION,
-                    JOptionPane.WARNING_MESSAGE
-            );
-
-            // Check if the user confirmed the reset
-            if (response == JOptionPane.YES_OPTION) {
-                resetProgress();  // Call the reset logic if confirmed
-            }
+            confirm(0);
         }); // Call resetProgress method on click
         resetProgress();
         loadProgress();
